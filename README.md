@@ -33,7 +33,7 @@
 
 [![PDF](https://img.shields.io/badge/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-PDF-B30B00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29884250/_.pdf)
 &nbsp;
-[![PPT](https://img.shields.io/badge/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C-PPTX-D24726?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/29884257/_._v2.pptx)
+[![PPT](https://img.shields.io/badge/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-PPTX-D24726?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/29884257/_._v2.pptx)
 
 </div>
 
