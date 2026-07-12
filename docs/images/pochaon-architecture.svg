@@ -1,81 +1,145 @@
-<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
-  <rect width="900" height="560" fill="#FFFCFB"/>
+<svg viewBox="0 0 920 620" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, BlinkMacSystemFont, sans-serif">
+  <rect width="920" height="620" fill="#FFFCFB"/>
 
-  <!-- Clients -->
-  <rect x="60" y="24" width="110" height="32" rx="6" fill="#2C3E50"/>
-  <text x="115" y="45" font-size="11.5" fill="#fff" text-anchor="middle" font-weight="600">손님 (테이블)</text>
-  <rect x="395" y="24" width="110" height="32" rx="6" fill="#2C3E50"/>
-  <text x="450" y="45" font-size="11.5" fill="#fff" text-anchor="middle" font-weight="600">점주</text>
-  <rect x="730" y="24" width="110" height="32" rx="6" fill="#2C3E50"/>
-  <text x="785" y="45" font-size="11.5" fill="#fff" text-anchor="middle" font-weight="600">주방</text>
+  <!-- ===== BAND 1: Clients ===== -->
+  <rect x="0" y="0" width="920" height="76" fill="#F7F4F3"/>
 
-  <path d="M115 56 L400 92" stroke="#94A3B8" stroke-width="1.3" marker-end="url(#c)"/>
-  <path d="M450 56 L450 92" stroke="#94A3B8" stroke-width="1.3" marker-end="url(#c)"/>
-  <path d="M785 56 L500 92" stroke="#94A3B8" stroke-width="1.3" marker-end="url(#c)"/>
-  <text x="620" y="78" font-size="9.5" fill="#94A3B8" text-anchor="middle">WebSocket / STOMP</text>
+  <rect x="90" y="18" width="150" height="40" rx="8" fill="#2C3E50"/>
+  <g transform="translate(108,28)">
+    <rect x="0" y="0" width="14" height="20" rx="2.5" fill="none" stroke="#fff" stroke-width="1.8"/>
+    <line x1="4" y1="16.5" x2="10" y2="16.5" stroke="#fff" stroke-width="1.5"/>
+  </g>
+  <text x="132" y="43" font-size="13" fill="#fff" font-weight="600">손님 · 테이블</text>
 
-  <!-- Ingress -->
-  <rect x="350" y="98" width="200" height="36" rx="6" fill="#fff" stroke="#009639" stroke-width="2"/>
-  <text x="450" y="121" font-size="12.5" fill="#00722C" text-anchor="middle" font-weight="600">nginx Ingress</text>
+  <rect x="385" y="18" width="150" height="40" rx="8" fill="#2C3E50"/>
+  <g transform="translate(403,29)">
+    <rect x="0" y="2" width="20" height="14" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/>
+    <line x1="7" y1="19" x2="13" y2="19" stroke="#fff" stroke-width="1.8"/>
+  </g>
+  <text x="431" y="43" font-size="13" fill="#fff" font-weight="600">점주</text>
 
-  <!-- EKS 경계 -->
-  <rect x="30" y="152" width="840" height="180" rx="10" fill="none" stroke="#E85D3D" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
-  <text x="46" y="173" font-size="11" fill="#E85D3D" font-weight="600" letter-spacing="1">AWS EKS · 동일 인스턴스 복제본 ×3</text>
+  <rect x="680" y="18" width="150" height="40" rx="8" fill="#2C3E50"/>
+  <g transform="translate(698,28)">
+    <path d="M2 20 L2 8 M8 20 L8 2 M8 8 L2 8 M14 20 C14 20 14 10 14 8 C14 4 17 2 17 2 L17 20" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <text x="726" y="43" font-size="13" fill="#fff" font-weight="600">주방</text>
 
-  <path d="M450 134 L155 190" stroke="#94A3B8" stroke-width="1.3" marker-end="url(#c)"/>
-  <path d="M450 134 L450 190" stroke="#94A3B8" stroke-width="1.3" marker-end="url(#c)"/>
-  <path d="M450 134 L745 190" stroke="#94A3B8" stroke-width="1.3" marker-end="url(#c)"/>
+  <path d="M165 58 L420 100" stroke="#B0BEC5" stroke-width="2" marker-end="url(#g2)"/>
+  <path d="M460 58 L460 100" stroke="#B0BEC5" stroke-width="2" marker-end="url(#g2)"/>
+  <path d="M755 58 L500 100" stroke="#B0BEC5" stroke-width="2" marker-end="url(#g2)"/>
+  <text x="620" y="84" font-size="10.5" fill="#94A3B8" text-anchor="middle" font-weight="600">WebSocket / STOMP</text>
 
-  <!-- Pods -->
-  <rect x="70" y="196" width="170" height="64" rx="6" fill="#FDEEE9" stroke="#E85D3D" stroke-width="1.5"/>
-  <text x="155" y="217" font-size="12.5" fill="#A63409" text-anchor="middle" font-weight="700">Pod 1</text>
-  <text x="155" y="234" font-size="10" fill="#8F6055" text-anchor="middle">Spring Boot (모놀리식)</text>
-  <text x="155" y="250" font-size="9.5" fill="#B87A68" text-anchor="middle">STOMP 세션 (in-memory)</text>
+  <!-- ===== BAND 2: Ingress ===== -->
+  <rect x="330" y="100" width="260" height="44" rx="8" fill="#fff" stroke="#009639" stroke-width="2.5"/>
+  <g transform="translate(354,111)">
+    <path d="M0 21 L0 4 L15 21 L15 4" fill="none" stroke="#009639" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="386" y="128" font-size="14" fill="#00722C" font-weight="700">nginx Ingress</text>
 
-  <rect x="365" y="196" width="170" height="64" rx="6" fill="#FDEEE9" stroke="#E85D3D" stroke-width="1.5"/>
-  <text x="450" y="217" font-size="12.5" fill="#A63409" text-anchor="middle" font-weight="700">Pod 2</text>
-  <text x="450" y="234" font-size="10" fill="#8F6055" text-anchor="middle">Spring Boot (모놀리식)</text>
-  <text x="450" y="250" font-size="9.5" fill="#B87A68" text-anchor="middle">STOMP 세션 (in-memory)</text>
+  <!-- ===== BAND 3: EKS Pods ===== -->
+  <rect x="26" y="172" width="868" height="126" rx="12" fill="#FEF6F3" stroke="#E85D3D" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <g transform="translate(44,188)">
+    <path d="M9 0 L18 5 L16 15 L9 19 L2 15 L0 5 Z" fill="none" stroke="#E85D3D" stroke-width="1.8"/>
+    <path d="M9 5 L13 7.5 L12 13 L9 15 L6 13 L5 7.5 Z" fill="#E85D3D"/>
+  </g>
+  <text x="70" y="203" font-size="12" fill="#E85D3D" font-weight="700" letter-spacing="0.5">AWS EKS · 모놀리식 애플리케이션의 동일 복제본 ×3</text>
 
-  <rect x="660" y="196" width="170" height="64" rx="6" fill="#FDEEE9" stroke="#E85D3D" stroke-width="1.5"/>
-  <text x="745" y="217" font-size="12.5" fill="#A63409" text-anchor="middle" font-weight="700">Pod 3</text>
-  <text x="745" y="234" font-size="10" fill="#8F6055" text-anchor="middle">Spring Boot (모놀리식)</text>
-  <text x="745" y="250" font-size="9.5" fill="#B87A68" text-anchor="middle">STOMP 세션 (in-memory)</text>
+  <path d="M460 144 L155 224" stroke="#B0BEC5" stroke-width="2" marker-end="url(#g2)"/>
+  <path d="M460 144 L460 224" stroke="#B0BEC5" stroke-width="2" marker-end="url(#g2)"/>
+  <path d="M460 144 L765 224" stroke="#B0BEC5" stroke-width="2" marker-end="url(#g2)"/>
 
-  <!-- Kafka fan-out (양방향) -->
-  <path d="M155 260 L155 288" stroke="#231F20" stroke-width="1.8" marker-end="url(#d)"/>
-  <path d="M745 260 L745 288" stroke="#231F20" stroke-width="1.8" marker-end="url(#d)"/>
-  <path d="M420 294 L420 266" stroke="#231F20" stroke-width="1.8" marker-end="url(#d)"/>
-  <path d="M480 294 L480 266" stroke="#231F20" stroke-width="1.8" marker-end="url(#d)"/>
+  <!-- Pod 1 -->
+  <rect x="55" y="224" width="200" height="60" rx="8" fill="#fff" stroke="#E85D3D" stroke-width="2"/>
+  <g transform="translate(70,238)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  </g>
+  <text x="102" y="248" font-size="13.5" fill="#A63409" font-weight="700">Pod 1</text>
+  <text x="102" y="263" font-size="9.5" fill="#8F6055">Spring Boot · 모놀리식</text>
+  <text x="102" y="276" font-size="9" fill="#C09080">STOMP 세션 (in-memory)</text>
 
-  <rect x="230" y="294" width="440" height="30" rx="5" fill="#F1F5F9" stroke="#231F20" stroke-width="1.5"/>
-  <text x="450" y="314" font-size="11.5" fill="#231F20" text-anchor="middle" font-weight="700">Kafka — 모든 Pod이 Consumer로 수신 후 각자 STOMP 세션에 fan-out</text>
+  <!-- Pod 2 -->
+  <rect x="360" y="224" width="200" height="60" rx="8" fill="#fff" stroke="#E85D3D" stroke-width="2"/>
+  <g transform="translate(375,238)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  </g>
+  <text x="407" y="248" font-size="13.5" fill="#A63409" font-weight="700">Pod 2</text>
+  <text x="407" y="263" font-size="9.5" fill="#8F6055">Spring Boot · 모놀리식</text>
+  <text x="407" y="276" font-size="9" fill="#C09080">STOMP 세션 (in-memory)</text>
 
-  <!-- 문제/해결 대비 -->
-  <rect x="30" y="352" width="410" height="86" rx="8" fill="#FDF2F2" stroke="#DC2626" stroke-width="1.2"/>
-  <text x="48" y="374" font-size="11" fill="#DC2626" font-weight="700">✕ SimpleBroker (기각)</text>
-  <text x="48" y="395" font-size="10.5" fill="#7F1D1D">STOMP 세션이 Pod 메모리에 묶임</text>
-  <text x="48" y="413" font-size="10.5" fill="#7F1D1D">→ Pod 1 손님이 Pod 2 발행 메시지를 못 받음</text>
-  <text x="48" y="429" font-size="10" fill="#B45454">수평 확장의 구조적 한계 (코드 버그 아님)</text>
+  <!-- Pod 3 -->
+  <rect x="665" y="224" width="200" height="60" rx="8" fill="#fff" stroke="#E85D3D" stroke-width="2"/>
+  <g transform="translate(680,238)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  </g>
+  <text x="712" y="248" font-size="13.5" fill="#A63409" font-weight="700">Pod 3</text>
+  <text x="712" y="263" font-size="9.5" fill="#8F6055">Spring Boot · 모놀리식</text>
+  <text x="712" y="276" font-size="9" fill="#C09080">STOMP 세션 (in-memory)</text>
 
-  <rect x="460" y="352" width="410" height="86" rx="8" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2"/>
-  <text x="478" y="374" font-size="11" fill="#16A34A" font-weight="700">✓ Kafka fan-out (채택)</text>
-  <text x="478" y="395" font-size="10.5" fill="#14532D">발행 Pod과 무관하게 전 Pod이 구독</text>
-  <text x="478" y="413" font-size="10.5" fill="#14532D">→ 각 Pod이 자기 세션에만 전달</text>
-  <text x="478" y="429" font-size="10" fill="#4D7C5A">Pod 수와 무관하게 동작</text>
+  <!-- ===== BAND 4: Kafka fan-out (양방향) ===== -->
+  <path d="M130 284 L130 322" stroke="#231F20" stroke-width="2.2" marker-end="url(#k2)"/>
+  <path d="M180 322 L180 284" stroke="#231F20" stroke-width="2.2" marker-end="url(#k2)"/>
+  <path d="M435 284 L435 322" stroke="#231F20" stroke-width="2.2" marker-end="url(#k2)"/>
+  <path d="M485 322 L485 284" stroke="#231F20" stroke-width="2.2" marker-end="url(#k2)"/>
+  <path d="M740 284 L740 322" stroke="#231F20" stroke-width="2.2" marker-end="url(#k2)"/>
+  <path d="M790 322 L790 284" stroke="#231F20" stroke-width="2.2" marker-end="url(#k2)"/>
 
-  <!-- Data -->
-  <rect x="230" y="466" width="200" height="36" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="330" y="489" font-size="11.5" fill="#334155" text-anchor="middle" font-weight="600">MySQL 8</text>
-  <rect x="470" y="466" width="200" height="36" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="570" y="489" font-size="11.5" fill="#334155" text-anchor="middle" font-weight="600">Redis 7 (멱등성 키 · 캐시)</text>
+  <rect x="55" y="322" width="810" height="52" rx="8" fill="#F5F5F4" stroke="#231F20" stroke-width="2.5"/>
+  <g transform="translate(78,336)">
+    <circle cx="4" cy="5" r="3.5" fill="#231F20"/>
+    <circle cx="4" cy="21" r="3.5" fill="#231F20"/>
+    <circle cx="17" cy="13" r="4.5" fill="#231F20"/>
+    <path d="M6 7 L14 11 M6 19 L14 15" stroke="#231F20" stroke-width="1.8"/>
+  </g>
+  <text x="112" y="343" font-size="13.5" fill="#231F20" font-weight="700">Kafka</text>
+  <text x="112" y="360" font-size="11" fill="#57534E">모든 Pod이 Consumer로 수신 → 각자의 STOMP 세션에 fan-out</text>
+  <text x="845" y="353" font-size="10" fill="#78716C" text-anchor="end" font-weight="600">concurrency = 1</text>
+
+  <!-- ===== BAND 5: 기각 vs 채택 ===== -->
+  <rect x="26" y="402" width="424" height="112" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.5"/>
+  <g transform="translate(46,416)">
+    <circle cx="8" cy="8" r="8" fill="#DC2626"/>
+    <path d="M5 5 L11 11 M11 5 L5 11" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="72" y="430" font-size="12.5" fill="#DC2626" font-weight="700">SimpleBroker · 기각</text>
+  <text x="46" y="454" font-size="11" fill="#7F1D1D">STOMP 세션이 Pod 메모리에 묶임</text>
+  <text x="46" y="474" font-size="11" fill="#7F1D1D">→ Pod 1 손님이 Pod 2 발행 메시지를 못 받음</text>
+  <text x="46" y="497" font-size="10" fill="#B45454" font-style="italic">코드 버그가 아니라 수평 확장의 구조적 한계</text>
+
+  <rect x="470" y="402" width="424" height="112" rx="10" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
+  <g transform="translate(490,416)">
+    <circle cx="8" cy="8" r="8" fill="#16A34A"/>
+    <path d="M4.5 8 L7 10.5 L11.5 5.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="516" y="430" font-size="12.5" fill="#16A34A" font-weight="700">Kafka fan-out · 채택</text>
+  <text x="490" y="454" font-size="11" fill="#14532D">발행 Pod과 무관하게 전 Pod이 구독</text>
+  <text x="490" y="474" font-size="11" fill="#14532D">→ 각 Pod이 자기 세션에만 전달</text>
+  <text x="490" y="497" font-size="10" fill="#4D7C5A" font-style="italic">Pod 수와 무관하게 동작</text>
+
+  <!-- ===== BAND 6: Data ===== -->
+  <rect x="250" y="540" width="180" height="52" rx="8" fill="#fff" stroke="#4479A1" stroke-width="2"/>
+  <g transform="translate(268,552)">
+    <ellipse cx="10" cy="4" rx="10" ry="4" fill="#4479A1"/>
+    <path d="M0 4 L0 20 C0 22.5 4.5 24 10 24 C15.5 24 20 22.5 20 20 L20 4" fill="none" stroke="#4479A1" stroke-width="2"/>
+    <path d="M0 12 C0 14.5 4.5 16 10 16 C15.5 16 20 14.5 20 12" fill="none" stroke="#4479A1" stroke-width="1.5"/>
+  </g>
+  <text x="300" y="563" font-size="12.5" fill="#2C5372" font-weight="700">MySQL 8</text>
+  <text x="300" y="579" font-size="9.5" fill="#7796AC">비관적 락 · 재고 정합성</text>
+
+  <rect x="490" y="540" width="180" height="52" rx="8" fill="#fff" stroke="#FF4438" stroke-width="2"/>
+  <g transform="translate(508,553)">
+    <path d="M10 0 L20 5 L10 10 L0 5 Z" fill="#FF4438"/>
+    <path d="M0 11 L10 16 L20 11" fill="none" stroke="#FF4438" stroke-width="2"/>
+    <path d="M0 17 L10 22 L20 17" fill="none" stroke="#FF4438" stroke-width="2"/>
+  </g>
+  <text x="540" y="563" font-size="12.5" fill="#C4362D" font-weight="700">Redis 7</text>
+  <text x="540" y="579" font-size="9.5" fill="#E08078">멱등성 키 · 중복 요청 차단</text>
 
   <defs>
-    <marker id="c" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-      <path d="M0 1 L7 4 L0 7" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+    <marker id="g2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#B0BEC5" stroke-width="1.8"/>
     </marker>
-    <marker id="d" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-      <path d="M0 1 L7 4 L0 7" fill="none" stroke="#231F20" stroke-width="1.5"/>
+    <marker id="k2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#231F20" stroke-width="2"/>
     </marker>
   </defs>
 </svg>
