@@ -9,7 +9,7 @@
 
 <br/>
 
-[![PDF](https://img.shields.io/badge/포트폴리오-PDF-B30B00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/HwangJwan/Portfolio/blob/main/docs/HwangJuwan_Portfolio.pdf)
+[![PDF](https://img.shields.io/badge/포트폴리오-PDF-B30B00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/HwangJwan/Portfolio/raw/main/docs/HwangJuwan_Portfolio.pdf)
 &nbsp;
 [![PPTX](https://img.shields.io/badge/포트폴리오-PPTX-D24726?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/HwangJwan/Portfolio/raw/main/docs/HwangJuwan_Portfolio.pptx)
 
