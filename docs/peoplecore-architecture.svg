@@ -1,0 +1,82 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
+  <rect width="900" height="560" fill="#FBFDFC"/>
+
+  <!-- EKS 경계 -->
+  <rect x="30" y="70" width="840" height="400" rx="10" fill="none" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+  <text x="46" y="92" font-size="11" fill="#1D9E75" font-weight="600" letter-spacing="1">AWS EKS</text>
+
+  <!-- Client -->
+  <rect x="380" y="20" width="140" height="34" rx="6" fill="#2C3E50"/>
+  <text x="450" y="42" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">Client (Vue 3)</text>
+  <path d="M450 54 L450 106" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Gateway -->
+  <rect x="350" y="106" width="200" height="38" rx="6" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
+  <text x="450" y="130" font-size="13" fill="#145A1B" text-anchor="middle" font-weight="600">API Gateway</text>
+
+  <!-- MSA Services -->
+  <path d="M450 144 L170 190" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M450 144 L450 190" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M450 144 L730 190" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="80" y="196" width="180" height="52" rx="6" fill="#E8F5EF" stroke="#1D9E75" stroke-width="1.5"/>
+  <text x="170" y="217" font-size="12.5" fill="#145A1B" text-anchor="middle" font-weight="700">hr-service</text>
+  <text x="170" y="236" font-size="10.5" fill="#5A7A6B" text-anchor="middle">인사 · 근태 · 급여 · 결재</text>
+
+  <rect x="360" y="196" width="180" height="52" rx="6" fill="#E8F5EF" stroke="#1D9E75" stroke-width="1.5"/>
+  <text x="450" y="217" font-size="12.5" fill="#145A1B" text-anchor="middle" font-weight="700">search-service</text>
+  <text x="450" y="236" font-size="10.5" fill="#5A7A6B" text-anchor="middle">통합검색 · AI Copilot</text>
+
+  <rect x="640" y="196" width="180" height="52" rx="6" fill="#E8F5EF" stroke="#1D9E75" stroke-width="1.5"/>
+  <text x="730" y="217" font-size="12.5" fill="#145A1B" text-anchor="middle" font-weight="700">collaboration-service</text>
+  <text x="730" y="236" font-size="10.5" fill="#5A7A6B" text-anchor="middle">파일함 · 조직도</text>
+
+  <!-- CDC 파이프라인 -->
+  <path d="M170 248 L170 296" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="80" y="302" width="180" height="40" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="170" y="327" font-size="12" fill="#334155" text-anchor="middle" font-weight="600">MySQL 8</text>
+
+  <path d="M260 322 L318 322" stroke="#4000BF" stroke-width="2" marker-end="url(#b)"/>
+  <text x="289" y="314" font-size="9.5" fill="#4000BF" text-anchor="middle" font-weight="600">binlog</text>
+
+  <rect x="324" y="302" width="120" height="40" rx="6" fill="#F3EEFC" stroke="#4000BF" stroke-width="1.5"/>
+  <text x="384" y="327" font-size="11.5" fill="#4000BF" text-anchor="middle" font-weight="700">Debezium</text>
+
+  <path d="M444 322 L502 322" stroke="#4000BF" stroke-width="2" marker-end="url(#b)"/>
+
+  <rect x="508" y="302" width="110" height="40" rx="6" fill="#F1F5F9" stroke="#231F20" stroke-width="1.5"/>
+  <text x="563" y="327" font-size="11.5" fill="#231F20" text-anchor="middle" font-weight="700">Kafka</text>
+
+  <path d="M618 322 L676 322" stroke="#4000BF" stroke-width="2" marker-end="url(#b)"/>
+
+  <rect x="682" y="302" width="138" height="40" rx="6" fill="#E6F1F5" stroke="#005571" stroke-width="1.5"/>
+  <text x="751" y="321" font-size="11.5" fill="#005571" text-anchor="middle" font-weight="700">Elasticsearch</text>
+  <text x="751" y="335" font-size="9" fill="#4A7C8C" text-anchor="middle">BM25 + kNN + RRF</text>
+
+  <text x="450" y="362" font-size="10" fill="#4000BF" text-anchor="middle" font-weight="600">CDC 색인 파이프라인 · 애플리케이션 이벤트 발행 코드 0</text>
+
+  <!-- AI 라우팅 -->
+  <path d="M450 248 L450 396" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <rect x="300" y="396" width="300" height="58" rx="6" fill="#FFF8F5" stroke="#D97757" stroke-width="1.5"/>
+  <text x="450" y="416" font-size="11.5" fill="#B85C3E" text-anchor="middle" font-weight="700">LLM 이중 라우팅 (FastAPI)</text>
+  <line x1="450" y1="424" x2="450" y2="446" stroke="#E8C4B4" stroke-width="1"/>
+  <text x="375" y="440" font-size="10" fill="#A50034" text-anchor="middle" font-weight="600">민감 → EXAONE 3.5</text>
+  <text x="527" y="440" font-size="10" fill="#D97757" text-anchor="middle" font-weight="600">일반 → Claude Haiku</text>
+
+  <!-- 저장소 -->
+  <rect x="640" y="396" width="180" height="58" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="730" y="416" font-size="11" fill="#64748B" text-anchor="middle" font-weight="600">ChromaDB · MinIO</text>
+  <text x="730" y="437" font-size="9.5" fill="#94A3B8" text-anchor="middle">벡터 저장 · 파일 스토리지</text>
+
+  <!-- 하단 캡션 -->
+  <text x="450" y="502" font-size="11" fill="#64748B" text-anchor="middle">서비스별 독립 배포 · 이벤트 기반 통신 · 온프레미스 sLLM으로 민감정보 격리</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 1 L7 4 L0 7" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+    </marker>
+    <marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 1 L7 4 L0 7" fill="none" stroke="#4000BF" stroke-width="1.5"/>
+    </marker>
+  </defs>
+</svg>
