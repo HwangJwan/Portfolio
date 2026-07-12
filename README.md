@@ -66,12 +66,136 @@
 
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:185FA5,100:E6F1FB&height=4&section=header" width="100%" />
+
+<h2>
+<img src="https://img.shields.io/badge/-185FA5?style=flat-square" height="20" />
+&nbsp; Briefly
+&nbsp;<img src="https://img.shields.io/badge/진행_중-123258?style=flat-square" />
+</h2>
+
+### 팀 단위 AI 문서 분석 워크스페이스
+
+문서를 업로드하면 요약 · 액션 아이템을 추출하고, RAG로 문서에 직접 질문합니다.
+**팀 = 테넌트** 구조의 멀티테넌시 B2B 서비스.
+
+<table>
+<tr><td width="90"><b>기간</b></td><td>2026.06 – 진행 중</td></tr>
+<tr><td><b>인원</b></td><td>1인 · 기획 · 설계 · 개발 · 인프라</td></tr>
+<tr><td><b>스택</b></td><td>
+
+![Spring](https://img.shields.io/badge/Spring_Boot_4-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white)
+![pgvector](https://img.shields.io/badge/PostgreSQL_+_pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=white)
+![MinIO](https://img.shields.io/badge/MinIO-C72E49?style=flat-square&logo=minio&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+
+</td></tr>
+<tr><td><b>현황</b></td><td>인증 · 팀 초대 · 문서 업로드 · 인덱싱 파이프라인 완료</td></tr>
+</table>
+
+<div align="center">
+
+![Tests](https://img.shields.io/badge/테스트-51개_통과-2EA043?style=for-the-badge)
+&nbsp;
+![Tenancy](https://img.shields.io/badge/테넌트_격리-다중_방어-1C4E7D?style=for-the-badge)
+
+</div>
+
+<br/>
+
+#### &nbsp;💡&nbsp; 핵심 문제
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**🔐 벡터 검색은 `@Filter`가 닿지 않는다**
+
+Hibernate `@Filter`는 JPA 경로만 거릅니다.
+벡터 검색은 네이티브 SQL이라 **필터를 그냥 통과합니다.**
+이 프로젝트의 **최대 유출 지점**입니다.
+
+`리포지토리 · @Filter · SQL 선필터`
+
+</td>
+<td width="50%" valign="top">
+
+**🧪 보안 장치는 꺼봐야 켜진 걸 안다**
+
+통과하는 테스트만으로는 **걸린 것**과
+**조용히 꺼진 것**이 구분되지 않습니다.
+옵션을 하나씩 제거해봤습니다.
+
+`변이 테스트로 실제 유출 재현`
+
+</td>
+</tr>
+</table>
+
+<details>
+<summary>&nbsp;<b>상세 &nbsp;—&nbsp; 테넌트 격리를 계층마다 다른 수단으로 막은 이유</b></summary>
+
+<br/>
+
+단일 DB · 단일 스키마에 `team_id`로 테넌트를 나누는 구조입니다.
+문제는 **경로마다 필터가 닿는 범위가 다르다는 것**이었습니다.
+
+| 방어선 | 막는 것 | 한계 |
+|:--|:--|:--|
+| `findByIdAndTeamId` | 명시적 조건 | 개발자가 잊으면 무력 |
+| Hibernate `@Filter` | JPA 쿼리 경로 | **네이티브 SQL엔 안 닿음** |
+| SQL 선(先)필터 | 벡터 검색 | 직접 써야 함 |
+| PostgreSQL RLS | DB 레벨 | *적용 예정* |
+
+<br/>
+
+</details>
+
+<details>
+<summary>&nbsp;<b>상세 &nbsp;—&nbsp; 변이 테스트로 초록불을 검증한 기록</b></summary>
+
+<br/>
+
+필터 옵션을 하나씩 끄고 테스트가 **실제로 실패하는지** 확인했습니다.
+
+| 끈 것 | `findById` 교차 조회 | `findAll` |
+|:--|:--:|:--:|
+| 정상 | 🟢 막힘 | 🟢 막힘 |
+| `applyToLoadByKey = false` | 🔴 **유출** | 🟢 막힘 |
+| `autoEnabled = false` | 🔴 **유출** | 🔴 **유출** |
+
+문서로만 알던 "`@Filter`는 PK 조회를 안 거른다"가 이 코드베이스에서 그대로 재현됐습니다.
+**`findAll`은 여전히 통과한다는 점**이 위험합니다 — 테스트를 하나만 봤다면 놓쳤을 겁니다.
+
+<br/>
+
+</details>
+
+<details>
+<summary>&nbsp;<b>상세 &nbsp;—&nbsp; Refresh Token 회전과 탈취 재사용 탐지</b></summary>
+
+<br/>
+
+AT는 메모리 + `Authorization: Bearer`, RT는 `httpOnly` 쿠키에 둡니다.
+재발급 시 RT를 회전시키고, **이미 회전된 토큰이 다시 들어오면 탈취로 간주**해
+해당 디바이스 세션을 통째로 폐기합니다. 공격자와 피해자를 함께 무효화하는 쪽을 택했습니다.
+
+AT와 RT가 같은 키로 서명되므로 `typ` 클레임으로 구분해,
+**RT를 `Bearer` 자리에 넣어 API를 호출하는 경로**를 차단했습니다.
+
+<br/>
+
+</details>
+
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1D9E75,100:E8F5EF&height=4&section=header" width="100%" />
 
 <h2>
 <img src="https://img.shields.io/badge/-1D9E75?style=flat-square" height="20" />
 &nbsp; PeopleCore
-&nbsp;<img src="https://img.shields.io/badge/대표_프로젝트-145A1B?style=flat-square" />
 </h2>
 
 ### HR SaaS ERP
@@ -419,131 +543,6 @@ AT/RT 시크릿을 분리하고 Redis 화이트리스트로 탈취 토큰을 즉
 [![Backend](https://img.shields.io/badge/Backend-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/beyond-sw-camp/be23-2nd-team2-Pocha_On-be)
 
 </div>
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:185FA5,100:E6F1FB&height=4&section=header" width="100%" />
-
-<h2>
-<img src="https://img.shields.io/badge/-185FA5?style=flat-square" height="20" />
-&nbsp; Briefly
-&nbsp;<img src="https://img.shields.io/badge/진행_중-123258?style=flat-square" />
-</h2>
-
-### 팀 단위 AI 문서 분석 워크스페이스
-
-문서를 업로드하면 요약 · 액션 아이템을 추출하고, RAG로 문서에 직접 질문합니다.
-**팀 = 테넌트** 구조의 멀티테넌시 B2B 서비스.
-
-<table>
-<tr><td width="90"><b>기간</b></td><td>2026.06 – 진행 중</td></tr>
-<tr><td><b>인원</b></td><td>1인 · 기획 · 설계 · 개발 · 인프라</td></tr>
-<tr><td><b>스택</b></td><td>
-
-![Spring](https://img.shields.io/badge/Spring_Boot_4-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white)
-![pgvector](https://img.shields.io/badge/PostgreSQL_+_pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=white)
-![MinIO](https://img.shields.io/badge/MinIO-C72E49?style=flat-square&logo=minio&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-
-</td></tr>
-<tr><td><b>현황</b></td><td>인증 · 팀 초대 · 문서 업로드 · 인덱싱 파이프라인 완료</td></tr>
-</table>
-
-<div align="center">
-
-![Tests](https://img.shields.io/badge/테스트-51개_통과-2EA043?style=for-the-badge)
-&nbsp;
-![Tenancy](https://img.shields.io/badge/테넌트_격리-다중_방어-1C4E7D?style=for-the-badge)
-
-</div>
-
-<br/>
-
-#### &nbsp;💡&nbsp; 핵심 문제
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-**🔐 벡터 검색은 `@Filter`가 닿지 않는다**
-
-Hibernate `@Filter`는 JPA 경로만 거릅니다.
-벡터 검색은 네이티브 SQL이라 **필터를 그냥 통과합니다.**
-이 프로젝트의 **최대 유출 지점**입니다.
-
-`리포지토리 · @Filter · SQL 선필터`
-
-</td>
-<td width="50%" valign="top">
-
-**🧪 보안 장치는 꺼봐야 켜진 걸 안다**
-
-통과하는 테스트만으로는 **걸린 것**과
-**조용히 꺼진 것**이 구분되지 않습니다.
-옵션을 하나씩 제거해봤습니다.
-
-`변이 테스트로 실제 유출 재현`
-
-</td>
-</tr>
-</table>
-
-<details>
-<summary>&nbsp;<b>상세 &nbsp;—&nbsp; 테넌트 격리를 계층마다 다른 수단으로 막은 이유</b></summary>
-
-<br/>
-
-단일 DB · 단일 스키마에 `team_id`로 테넌트를 나누는 구조입니다.
-문제는 **경로마다 필터가 닿는 범위가 다르다는 것**이었습니다.
-
-| 방어선 | 막는 것 | 한계 |
-|:--|:--|:--|
-| `findByIdAndTeamId` | 명시적 조건 | 개발자가 잊으면 무력 |
-| Hibernate `@Filter` | JPA 쿼리 경로 | **네이티브 SQL엔 안 닿음** |
-| SQL 선(先)필터 | 벡터 검색 | 직접 써야 함 |
-| PostgreSQL RLS | DB 레벨 | *적용 예정* |
-
-<br/>
-
-</details>
-
-<details>
-<summary>&nbsp;<b>상세 &nbsp;—&nbsp; 변이 테스트로 초록불을 검증한 기록</b></summary>
-
-<br/>
-
-필터 옵션을 하나씩 끄고 테스트가 **실제로 실패하는지** 확인했습니다.
-
-| 끈 것 | `findById` 교차 조회 | `findAll` |
-|:--|:--:|:--:|
-| 정상 | 🟢 막힘 | 🟢 막힘 |
-| `applyToLoadByKey = false` | 🔴 **유출** | 🟢 막힘 |
-| `autoEnabled = false` | 🔴 **유출** | 🔴 **유출** |
-
-문서로만 알던 "`@Filter`는 PK 조회를 안 거른다"가 이 코드베이스에서 그대로 재현됐습니다.
-**`findAll`은 여전히 통과한다는 점**이 위험합니다 — 테스트를 하나만 봤다면 놓쳤을 겁니다.
-
-<br/>
-
-</details>
-
-<details>
-<summary>&nbsp;<b>상세 &nbsp;—&nbsp; Refresh Token 회전과 탈취 재사용 탐지</b></summary>
-
-<br/>
-
-AT는 메모리 + `Authorization: Bearer`, RT는 `httpOnly` 쿠키에 둡니다.
-재발급 시 RT를 회전시키고, **이미 회전된 토큰이 다시 들어오면 탈취로 간주**해
-해당 디바이스 세션을 통째로 폐기합니다. 공격자와 피해자를 함께 무효화하는 쪽을 택했습니다.
-
-AT와 RT가 같은 키로 서명되므로 `typ` 클레임으로 구분해,
-**RT를 `Bearer` 자리에 넣어 API를 호출하는 경로**를 차단했습니다.
-
-<br/>
-
-</details>
 
 <br/>
 
