@@ -1,285 +1,267 @@
-<svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
-<rect width="960" height="640" fill="#fff"/>
+<svg viewBox="0 0 980 680" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
+<rect width="980" height="680" fill="#fff"/>
 
-<!-- ===== 상단: 사용자 유입 / 배포 파이프라인 ===== -->
-<g transform="translate(60,30)">
-  <circle cx="16" cy="16" r="14" fill="none" stroke="#F5A623" stroke-width="2.5"/>
-  <circle cx="16" cy="11" r="4" fill="#F5A623"/>
-  <path d="M8 26 C8 20 24 20 24 26" fill="#F5A623"/>
-  <text x="16" y="48" font-size="10" fill="#555" text-anchor="middle" font-weight="600">사용자</text>
+<!-- ===== 상단: 유입 ===== -->
+<g transform="translate(48,28)">
+  <circle cx="18" cy="16" r="15" fill="none" stroke="#F5A623" stroke-width="2.5"/>
+  <circle cx="18" cy="11" r="4.5" fill="#F5A623"/>
+  <path d="M9 27 C9 20 27 20 27 27" fill="#F5A623"/>
+  <text x="18" y="50" font-size="10" fill="#555" text-anchor="middle" font-weight="600">사용자</text>
 </g>
-<path d="M100 46 L128 46" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M92 44 L118 44" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
 
-<g transform="translate(136,28)">
+<g transform="translate(126,26)">
   <rect x="0" y="0" width="36" height="36" rx="8" fill="#8C4FFF"/>
   <circle cx="18" cy="18" r="11" fill="none" stroke="#fff" stroke-width="2"/>
   <path d="M7 18 L29 18 M18 7 C22 12 22 24 18 29 C14 24 14 12 18 7" stroke="#fff" stroke-width="1.6" fill="none"/>
   <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">Route 53</text>
-  <text x="18" y="-6" font-size="8.5" fill="#999" text-anchor="middle">peoplecore.cloud</text>
+  <text x="18" y="-8" font-size="8.5" fill="#aaa" text-anchor="middle">peoplecore.cloud</text>
 </g>
-<path d="M180 46 L208 46" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M170 44 L196 44" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
 
-<g transform="translate(216,28)">
+<g transform="translate(204,26)">
   <rect x="0" y="0" width="36" height="36" rx="8" fill="#E8792B"/>
-  <rect x="9" y="8" width="18" height="5" rx="1.5" fill="#fff"/>
-  <rect x="6" y="17" width="8" height="5" rx="1.5" fill="#fff"/>
-  <rect x="22" y="17" width="8" height="5" rx="1.5" fill="#fff"/>
+  <rect x="9" y="8" width="18" height="4.5" rx="1.5" fill="#fff"/>
+  <rect x="6" y="17" width="8" height="4.5" rx="1.5" fill="#fff"/>
+  <rect x="22" y="17" width="8" height="4.5" rx="1.5" fill="#fff"/>
   <rect x="6" y="26" width="8" height="4" rx="1.5" fill="#fff"/>
   <rect x="22" y="26" width="8" height="4" rx="1.5" fill="#fff"/>
   <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">ALB</text>
 </g>
 
-<!-- 배포 파이프라인 (우측) -->
-<g transform="translate(690,28)">
+<!-- 배포 (우측) -->
+<g transform="translate(880,26)">
   <circle cx="18" cy="18" r="17" fill="#181717"/>
-  <path d="M18 6 C11 6 6 11 6 18 C6 23.5 9.5 28 14.5 29.5 C15.2 29.6 15.4 29.2 15.4 28.8 L15.4 26.6 C12 27.4 11.3 25 11.3 25 C10.7 23.6 9.9 23.2 9.9 23.2 C8.8 22.5 10 22.5 10 22.5 C11.2 22.6 11.8 23.7 11.8 23.7 C12.9 25.5 14.6 25 15.4 24.7 C15.5 23.9 15.8 23.4 16.2 23.1 C13.5 22.8 10.6 21.7 10.6 17.1 C10.6 15.8 11.1 14.7 11.8 13.9 C11.7 13.6 11.3 12.3 11.9 10.6 C11.9 10.6 13 10.2 15.4 11.9 C16.4 11.6 17.4 11.5 18.5 11.5 C19.5 11.5 20.6 11.6 21.6 11.9 C24 10.2 25 10.6 25 10.6 C25.6 12.3 25.2 13.6 25.1 13.9 C25.9 14.7 26.3 15.8 26.3 17.1 C26.3 21.7 23.5 22.8 20.8 23.1 C21.3 23.5 21.7 24.3 21.7 25.5 L21.7 28.8 C21.7 29.2 21.9 29.6 22.6 29.5 C27.5 28 31 23.5 31 18 C31 11 25.5 6 18 6 Z" fill="#fff"/>
+  <path d="M18 7 C12 7 7 12 7 18 C7 22.8 10.1 26.9 14.4 28.3 C14.9 28.4 15.1 28.1 15.1 27.8 L15.1 25.9 C12.1 26.5 11.5 24.4 11.5 24.4 C11 23.2 10.3 22.9 10.3 22.9 C9.4 22.2 10.4 22.3 10.4 22.3 C11.4 22.4 12 23.4 12 23.4 C12.9 25 14.4 24.5 15.1 24.3 C15.2 23.6 15.5 23.1 15.8 22.9 C13.4 22.6 10.9 21.7 10.9 17.6 C10.9 16.4 11.3 15.5 12 14.7 C11.9 14.5 11.5 13.3 12.1 11.8 C12.1 11.8 13 11.5 15.1 13 C16 12.8 16.9 12.7 17.9 12.7 C18.8 12.7 19.8 12.8 20.7 13 C22.8 11.5 23.7 11.8 23.7 11.8 C24.2 13.3 23.9 14.5 23.8 14.7 C24.5 15.5 24.9 16.4 24.9 17.6 C24.9 21.7 22.4 22.6 20 22.9 C20.4 23.2 20.8 23.9 20.8 25 L20.8 27.8 C20.8 28.1 21 28.5 21.5 28.3 C25.8 26.9 29 22.8 29 18 C29 12 24 7 18 7 Z" fill="#fff"/>
   <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">GitHub Actions</text>
 </g>
-<path d="M680 46 L652 46" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M872 44 L846 44" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
 
-<g transform="translate(604,28)">
+<g transform="translate(798,26)">
   <rect x="0" y="0" width="36" height="36" rx="8" fill="#F58536"/>
   <path d="M18 8 L28 13 L28 24 L18 29 L8 24 L8 13 Z" fill="none" stroke="#fff" stroke-width="2"/>
   <path d="M8 13 L18 18 L28 13 M18 18 L18 29" stroke="#fff" stroke-width="1.6" fill="none"/>
   <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">ECR</text>
 </g>
-<path d="M622 70 L622 96" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M816 68 L816 96 L560 96 L560 118" stroke="#1a1a1a" stroke-width="2.5" fill="none" marker-end="url(#ar)" stroke-dasharray="7 5"/>
+<text x="700" y="90" font-size="9.5" fill="#888" text-anchor="middle" font-weight="600">이미지 배포</text>
 
-<path d="M234 70 L234 96 L440 96 L440 118" stroke="#000" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<path d="M222 68 L222 96 L500 96 L500 118" stroke="#1a1a1a" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
 
-<!-- ===== EKS 경계 ===== -->
-<rect x="40" y="150" width="600" height="450" rx="10" fill="none" stroke="#326CE5" stroke-width="2.5"/>
-<g transform="translate(50,124)">
+<!-- ===== EKS ===== -->
+<rect x="34" y="152" width="660" height="486" rx="12" fill="#FAFCFF" stroke="#326CE5" stroke-width="2.5"/>
+<g transform="translate(46,128)">
   <path d="M14 0 L27 7 L24 22 L14 28 L4 22 L1 7 Z" fill="#FF9900"/>
   <path d="M14 7 L20 10 L18 19 L14 21 L10 19 L8 10 Z" fill="#fff"/>
 </g>
-<text x="84" y="145" font-size="11" fill="#FF9900" font-weight="700">Amazon EKS</text>
+<text x="80" y="149" font-size="11.5" fill="#FF9900" font-weight="700">Amazon EKS</text>
 
 <!-- Ingress -->
-<g transform="translate(420,118)">
+<g transform="translate(510,118)">
   <path d="M20 0 L37 9 L33 30 L20 38 L7 30 L3 9 Z" fill="#326CE5"/>
   <path d="M20 9 L28 13 L26 24 L20 28 L14 24 L12 13 Z" fill="none" stroke="#fff" stroke-width="1.8"/>
   <circle cx="20" cy="19" r="2.5" fill="#fff"/>
-  <text x="20" y="52" font-size="10" fill="#326CE5" text-anchor="middle" font-weight="700">Ingress</text>
 </g>
-<path d="M440 172 L440 196" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<text x="530" y="172" font-size="10" fill="#326CE5" text-anchor="middle" font-weight="700">Ingress</text>
 
-<!-- Spring Cloud Gateway -->
-<g transform="translate(360,196)">
-  <rect x="0" y="0" width="160" height="46" rx="8" fill="#fff" stroke="#6DB33F" stroke-width="2.5"/>
-  <g transform="translate(12,11)">
-    <path d="M12 0 C4 6 0 12 0 17 C0 22 5 25 12 25 C19 25 24 22 24 17 C24 11 19 6 12 0 Z" fill="#6DB33F"/>
+<path d="M530 178 L530 198 L364 198 L364 214" stroke="#1a1a1a" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+
+<!-- Gateway -->
+<g transform="translate(264,214)">
+  <rect x="0" y="0" width="200" height="52" rx="9" fill="#fff" stroke="#6DB33F" stroke-width="2.5"/>
+  <g transform="translate(16,13)">
+    <path d="M13 0 C4 6 0 13 0 19 C0 24 6 27 13 27 C20 27 26 24 26 19 C26 12 21 6 13 0 Z" fill="#6DB33F"/>
+    <circle cx="13" cy="20" r="4" fill="#fff"/>
+  </g>
+  <text x="54" y="23" font-size="12.5" fill="#145A1B" font-weight="700">Spring Cloud</text>
+  <text x="54" y="40" font-size="12.5" fill="#145A1B" font-weight="700">Gateway</text>
+</g>
+
+<!-- Gateway → 3개 서비스 (직각 분기) -->
+<path d="M364 266 L364 288" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M130 288 L598 288" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M130 288 L130 312" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+<path d="M364 288 L364 312" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+<path d="M598 288 L598 312" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+
+<!-- ===== MSA 서비스 3개 (동일 높이 정렬) ===== -->
+<g transform="translate(62,312)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="136" height="52" rx="8" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="6" y="34" font-size="8.5" fill="#888" font-weight="600">pod</text>
+  <g transform="translate(12,52)">
+    <path d="M2 15 L2 9 L27 9 L27 15 C27 20 21 23 14 23 C8 23 2 20 2 15 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+  </g>
+  <g transform="translate(50,51)">
+    <path d="M12 0 C4 5 0 11 0 17 C0 22 5 25 12 25 C19 25 24 22 24 17 C24 11 19 5 12 0 Z" fill="#6DB33F"/>
     <circle cx="12" cy="18" r="3.5" fill="#fff"/>
   </g>
-  <text x="46" y="21" font-size="12.5" fill="#145A1B" font-weight="700">Spring Cloud</text>
-  <text x="46" y="36" font-size="12.5" fill="#145A1B" font-weight="700">Gateway</text>
+  <text x="88" y="70" font-size="10.5" fill="#333" font-weight="700">hr-service</text>
 </g>
 
-<!-- 분기 화살표 -->
-<path d="M400 242 L300 268" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M440 242 L440 268" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M480 242 L580 268" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M380 242 L180 300" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M500 242 L560 400" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M420 242 L240 430" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-
-<!-- ===== Pod 카드들 ===== -->
-<!-- hr-service -->
-<g transform="translate(70,270)">
+<g transform="translate(296,312)">
   <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
   <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
-  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
-  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
-  <g transform="translate(12,50)">
-    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
-    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
+  <rect x="0" y="38" width="136" height="52" rx="8" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="6" y="34" font-size="8.5" fill="#888" font-weight="600">pod</text>
+  <g transform="translate(12,52)">
+    <path d="M2 15 L2 9 L27 9 L27 15 C27 20 21 23 14 23 C8 23 2 20 2 15 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5.5" height="5.5" fill="#2496ED"/>
   </g>
-  <g transform="translate(52,48)">
-    <path d="M13 0 C4 6 0 13 0 19 C0 24 5 28 13 28 C21 28 26 24 26 19 C26 12 21 6 13 0 Z" fill="#6DB33F"/>
-    <circle cx="13" cy="20" r="4" fill="#fff"/>
+  <g transform="translate(50,51)">
+    <path d="M12 0 C4 5 0 11 0 17 C0 22 5 25 12 25 C19 25 24 22 24 17 C24 11 19 5 12 0 Z" fill="#6DB33F"/>
+    <circle cx="12" cy="18" r="3.5" fill="#fff"/>
   </g>
-  <text x="90" y="68" font-size="10.5" fill="#333" font-weight="700">hr-service</text>
+  <text x="88" y="70" font-size="10.5" fill="#333" font-weight="700">search</text>
 </g>
 
-<!-- search-service -->
-<g transform="translate(70,392)">
+<g transform="translate(530,312)">
   <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
   <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
-  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
-  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
-  <g transform="translate(12,50)">
-    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
-    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
+  <rect x="0" y="38" width="136" height="52" rx="8" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="6" y="34" font-size="8.5" fill="#888" font-weight="600">pod</text>
+  <g transform="translate(12,52)">
+    <path d="M2 15 L2 9 L27 9 L27 15 C27 20 21 23 14 23 C8 23 2 20 2 15 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5.5" height="5.5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5.5" height="5.5" fill="#2496ED"/>
   </g>
-  <g transform="translate(54,52)">
-    <rect x="0" y="0" width="22" height="4" rx="2" fill="#00A9E0"/>
-    <rect x="0" y="6" width="22" height="4" rx="2" fill="#FEC514"/>
-    <rect x="0" y="12" width="14" height="4" rx="2" fill="#00BFB3"/>
-    <rect x="0" y="18" width="22" height="4" rx="2" fill="#005571"/>
+  <g transform="translate(50,51)">
+    <path d="M12 0 C4 5 0 11 0 17 C0 22 5 25 12 25 C19 25 24 22 24 17 C24 11 19 5 12 0 Z" fill="#6DB33F"/>
+    <circle cx="12" cy="18" r="3.5" fill="#fff"/>
   </g>
-  <text x="90" y="68" font-size="10.5" fill="#333" font-weight="700">search</text>
+  <text x="88" y="70" font-size="10.5" fill="#333" font-weight="700">collab</text>
 </g>
 
-<!-- collaboration -->
-<g transform="translate(70,514)">
-  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
-  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
-  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
-  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
-  <g transform="translate(12,50)">
-    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
-    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
-  </g>
-  <g transform="translate(52,48)">
-    <path d="M13 0 C4 6 0 13 0 19 C0 24 5 28 13 28 C21 28 26 24 26 19 C26 12 21 6 13 0 Z" fill="#6DB33F"/>
-    <circle cx="13" cy="20" r="4" fill="#fff"/>
-  </g>
-  <text x="90" y="68" font-size="10.5" fill="#333" font-weight="700">collab</text>
-</g>
-
-<!-- Redis -->
-<g transform="translate(255,300)">
-  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
-  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
-  <rect x="0" y="38" width="140" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
-  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
-  <g transform="translate(12,50)">
-    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
-    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
-  </g>
-  <g transform="translate(54,52)">
-    <path d="M13 0 L26 6 L13 12 L0 6 Z" fill="#FF4438"/>
-    <path d="M0 12 L13 18 L26 12" fill="none" stroke="#FF4438" stroke-width="2.5"/>
-    <path d="M0 17 L13 23 L26 17" fill="none" stroke="#FF4438" stroke-width="2.5"/>
-  </g>
-  <text x="95" y="68" font-size="10.5" fill="#333" font-weight="700">Redis</text>
-</g>
-
-<!-- Kafka -->
-<g transform="translate(255,430)">
-  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
-  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
-  <rect x="0" y="38" width="140" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
-  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
-  <g transform="translate(12,50)">
-    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
-    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
-  </g>
-  <g transform="translate(54,50)">
-    <circle cx="5" cy="5" r="4" fill="#231F20"/>
-    <circle cx="5" cy="22" r="4" fill="#231F20"/>
-    <circle cx="20" cy="13" r="5" fill="#231F20"/>
-    <path d="M8 7 L16 11 M8 20 L16 16" stroke="#231F20" stroke-width="2"/>
-  </g>
-  <text x="95" y="68" font-size="10.5" fill="#333" font-weight="700">Kafka</text>
-</g>
-
-<!-- Debezium -->
-<g transform="translate(255,548)">
-  <rect x="0" y="0" width="140" height="44" rx="7" fill="#fff" stroke="#4000BF" stroke-width="2"/>
+<!-- search → FastAPI -->
+<path d="M364 402 L364 424" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+<g transform="translate(296,424)">
+  <rect x="0" y="0" width="136" height="46" rx="8" fill="#fff" stroke="#009688" stroke-width="2"/>
   <g transform="translate(12,10)">
-    <circle cx="12" cy="12" r="11" fill="none" stroke="#4000BF" stroke-width="2.5"/>
+    <circle cx="13" cy="13" r="13" fill="#009688"/>
+    <path d="M14 4 L7 15 L12 15 L11 22 L19 11 L14 11 Z" fill="#fff"/>
+  </g>
+  <text x="46" y="21" font-size="11" fill="#00695C" font-weight="700">FastAPI</text>
+  <text x="46" y="35" font-size="8.5" fill="#4DB6AC">AI Copilot</text>
+</g>
+
+<!-- ===== 인프라 계층 (구분선) ===== -->
+<line x1="52" y1="496" x2="676" y2="496" stroke="#D0D7E2" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="60" y="490" font-size="9.5" fill="#94A3B8" font-weight="700" letter-spacing="0.5">DATA · MESSAGING</text>
+
+<!-- CDC 체인: Debezium → Kafka → ES -->
+<g transform="translate(56,516)">
+  <rect x="0" y="0" width="120" height="48" rx="8" fill="#fff" stroke="#4000BF" stroke-width="2"/>
+  <g transform="translate(12,12)">
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#4000BF" stroke-width="2.2"/>
     <circle cx="12" cy="12" r="4" fill="#4000BF"/>
-    <path d="M12 1 L12 5 M12 19 L12 23 M1 12 L5 12 M19 12 L23 12" stroke="#4000BF" stroke-width="2.5"/>
+    <path d="M12 1 L12 5 M12 19 L12 23 M1 12 L5 12 M19 12 L23 12" stroke="#4000BF" stroke-width="2.2"/>
   </g>
-  <text x="48" y="27" font-size="11" fill="#4000BF" font-weight="700">Debezium</text>
+  <text x="46" y="29" font-size="11" fill="#4000BF" font-weight="700">Debezium</text>
 </g>
 
-<!-- FastAPI (AI) -->
-<g transform="translate(430,400)">
-  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
-  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
-  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
-  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
-  <g transform="translate(12,50)">
-    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
-    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
-    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
+<path d="M176 540 L206 540" stroke="#4000BF" stroke-width="2.5" marker-end="url(#pu)"/>
+
+<g transform="translate(210,516)">
+  <rect x="0" y="0" width="120" height="48" rx="8" fill="#fff" stroke="#231F20" stroke-width="2"/>
+  <g transform="translate(14,12)">
+    <circle cx="5" cy="5" r="4" fill="#231F20"/>
+    <circle cx="5" cy="20" r="4" fill="#231F20"/>
+    <circle cx="19" cy="12" r="5" fill="#231F20"/>
+    <path d="M8 7 L15 10 M8 18 L15 15" stroke="#231F20" stroke-width="2"/>
   </g>
-  <g transform="translate(54,50)">
-    <circle cx="12" cy="12" r="12" fill="#009688"/>
-    <path d="M13 3 L6 14 L11 14 L10 21 L18 10 L13 10 Z" fill="#fff"/>
-  </g>
-  <text x="92" y="68" font-size="10.5" fill="#333" font-weight="700">FastAPI</text>
+  <text x="48" y="29" font-size="11" fill="#231F20" font-weight="700">Kafka</text>
 </g>
 
-<!-- Elasticsearch (독립) -->
-<g transform="translate(430,510)">
-  <rect x="0" y="0" width="150" height="52" rx="7" fill="#fff" stroke="#005571" stroke-width="2"/>
-  <g transform="translate(14,14)">
-    <rect x="0" y="0" width="22" height="4.5" rx="2" fill="#00A9E0"/>
-    <rect x="0" y="6.5" width="22" height="4.5" rx="2" fill="#FEC514"/>
-    <rect x="0" y="13" width="14" height="4.5" rx="2" fill="#00BFB3"/>
-    <rect x="0" y="19.5" width="22" height="4.5" rx="2" fill="#005571"/>
+<path d="M330 540 L360 540" stroke="#4000BF" stroke-width="2.5" marker-end="url(#pu)"/>
+
+<g transform="translate(364,516)">
+  <rect x="0" y="0" width="150" height="48" rx="8" fill="#fff" stroke="#005571" stroke-width="2"/>
+  <g transform="translate(14,12)">
+    <rect x="0" y="0" width="20" height="4" rx="2" fill="#00A9E0"/>
+    <rect x="0" y="6" width="20" height="4" rx="2" fill="#FEC514"/>
+    <rect x="0" y="12" width="13" height="4" rx="2" fill="#00BFB3"/>
+    <rect x="0" y="18" width="20" height="4" rx="2" fill="#005571"/>
   </g>
-  <text x="48" y="24" font-size="11" fill="#005571" font-weight="700">Elasticsearch</text>
-  <text x="48" y="39" font-size="8.5" fill="#4A7C8C">BM25 + kNN + RRF</text>
+  <text x="44" y="21" font-size="11" fill="#005571" font-weight="700">Elasticsearch</text>
+  <text x="44" y="35" font-size="8.5" fill="#4A7C8C">BM25 + kNN + RRF</text>
 </g>
+
+<!-- Redis (독립) -->
+<g transform="translate(546,516)">
+  <rect x="0" y="0" width="120" height="48" rx="8" fill="#fff" stroke="#FF4438" stroke-width="2"/>
+  <g transform="translate(14,13)">
+    <path d="M11 0 L22 5 L11 10 L0 5 Z" fill="#FF4438"/>
+    <path d="M0 11 L11 16 L22 11" fill="none" stroke="#FF4438" stroke-width="2.2"/>
+    <path d="M0 17 L11 22 L22 17" fill="none" stroke="#FF4438" stroke-width="2.2"/>
+  </g>
+  <text x="46" y="29" font-size="11" fill="#C4362D" font-weight="700">Redis</text>
+</g>
+
+<!-- 서비스 → 인프라 연결 (얇게) -->
+<path d="M364 470 L364 500" stroke="#B0BEC5" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M130 402 L130 500" stroke="#B0BEC5" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M598 402 L598 500" stroke="#B0BEC5" stroke-width="1.8" stroke-dasharray="4 3"/>
+
+<text x="364" y="592" font-size="10" fill="#4000BF" text-anchor="middle" font-weight="700">binlog → Kafka → ES 자동 색인 · 이벤트 누락 0건</text>
+<text x="364" y="614" font-size="9" fill="#94A3B8" text-anchor="middle">애플리케이션 이벤트 발행 코드 0</text>
 
 <!-- ===== 우측: 외부 서비스 ===== -->
-<!-- RDS -->
-<rect x="690" y="170" width="230" height="130" rx="10" fill="none" stroke="#2E73B8" stroke-width="2"/>
-<g transform="translate(760,196)">
-  <path d="M45 0 L90 26 L90 78 L45 104 L0 78 L0 26 Z" fill="#2E73B8" transform="scale(0.62)"/>
-  <path d="M45 0 L90 26 L45 52 L0 26 Z" fill="#5294CF" transform="scale(0.62)"/>
+<rect x="722" y="152" width="228" height="140" rx="10" fill="#F8FBFE" stroke="#2E73B8" stroke-width="2"/>
+<g transform="translate(796,180)">
+  <path d="M40 0 L80 23 L80 69 L40 92 L0 69 L0 23 Z" fill="#2E73B8" transform="scale(0.6)"/>
+  <path d="M40 0 L80 23 L40 46 L0 23 Z" fill="#5294CF" transform="scale(0.6)"/>
 </g>
-<text x="805" y="285" font-size="12" fill="#2E73B8" text-anchor="middle" font-weight="700">Amazon RDS</text>
-<text x="805" y="299" font-size="9" fill="#7BA7CC" text-anchor="middle">MySQL 8</text>
+<text x="836" y="258" font-size="12" fill="#2E73B8" text-anchor="middle" font-weight="700">Amazon RDS</text>
+<text x="836" y="274" font-size="9" fill="#7BA7CC" text-anchor="middle">MySQL 8 · binlog 활성화</text>
 
-<path d="M650 220 L684 220" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M684 250 L650 250" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M676 200 L716 200" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+<path d="M716 232 L676 232" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
 
-<!-- AI 라우팅 -->
-<rect x="690" y="340" width="230" height="230" rx="10" fill="none" stroke="#D97757" stroke-width="2"/>
-<text x="805" y="366" font-size="11" fill="#B85C3E" text-anchor="middle" font-weight="700">LLM 이중 라우팅</text>
+<!-- RDS → Debezium (CDC 소스) -->
+<path d="M836 292 L836 620 L120 620 L120 570" stroke="#4000BF" stroke-width="2.2" fill="none" stroke-dasharray="7 5" marker-end="url(#pu)"/>
 
-<g transform="translate(712,382)">
-  <rect x="0" y="0" width="186" height="76" rx="8" fill="#FDF1EC" stroke="#D97757" stroke-width="1.8"/>
-  <g transform="translate(14,16)">
-    <path d="M22 0 L22 44 M0 22 L44 22 M6 6 L38 38 M38 6 L6 38" stroke="#D97757" stroke-width="3" transform="scale(0.62)"/>
+<!-- AI -->
+<rect x="722" y="330" width="228" height="240" rx="10" fill="#FFFBFA" stroke="#D97757" stroke-width="2"/>
+<text x="836" y="356" font-size="11.5" fill="#B85C3E" text-anchor="middle" font-weight="700">LLM 이중 라우팅</text>
+
+<g transform="translate(742,372)">
+  <rect x="0" y="0" width="188" height="88" rx="8" fill="#FDF1EC" stroke="#D97757" stroke-width="1.8"/>
+  <g transform="translate(16,26)">
+    <path d="M14 0 L14 28 M0 14 L28 14 M4 4 L24 24 M24 4 L4 24" stroke="#D97757" stroke-width="2.5"/>
   </g>
-  <text x="60" y="26" font-size="11.5" fill="#B85C3E" font-weight="700">Claude Haiku</text>
-  <text x="60" y="43" font-size="9" fill="#C99080">일반 발화</text>
-  <text x="60" y="60" font-size="9" fill="#C99080">Prompt Caching · 83%↓</text>
+  <text x="62" y="28" font-size="11.5" fill="#B85C3E" font-weight="700">Claude Haiku</text>
+  <text x="62" y="48" font-size="9" fill="#C99080">일반 발화</text>
+  <text x="62" y="66" font-size="9" fill="#C99080">Prompt Caching · 비용 83%↓</text>
 </g>
 
-<g transform="translate(712,474)">
-  <rect x="0" y="0" width="186" height="76" rx="8" fill="#FCEEF0" stroke="#A50034" stroke-width="1.8"/>
-  <g transform="translate(14,20)">
+<g transform="translate(742,472)">
+  <rect x="0" y="0" width="188" height="82" rx="8" fill="#FCEEF0" stroke="#A50034" stroke-width="1.8"/>
+  <g transform="translate(16,24)">
     <rect x="0" y="0" width="28" height="28" rx="7" fill="#A50034"/>
     <circle cx="14" cy="14" r="7" fill="#fff"/>
     <circle cx="14" cy="14" r="3" fill="#A50034"/>
   </g>
-  <text x="54" y="26" font-size="11.5" fill="#A50034" font-weight="700">EXAONE 3.5</text>
-  <text x="54" y="43" font-size="9" fill="#C4707F">민감 발화 · 온프레미스</text>
-  <text x="54" y="60" font-size="9" fill="#C4707F">PIPA 준수</text>
+  <text x="56" y="26" font-size="11.5" fill="#A50034" font-weight="700">EXAONE 3.5</text>
+  <text x="56" y="45" font-size="9" fill="#C4707F">민감 발화 · 온프레미스</text>
+  <text x="56" y="63" font-size="9" fill="#C4707F">PIPA 준수 · Tool Use 자체 구현</text>
 </g>
 
-<path d="M590 424 L684 424" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M684 460 L590 460" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
-
-<!-- CDC 흐름 강조 -->
-<path d="M180 592 L250 570" stroke="#4000BF" stroke-width="2.5" stroke-dasharray="6 4" fill="none"/>
-<path d="M395 570 L430 555" stroke="#4000BF" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#pu)"/>
-<text x="300" y="614" font-size="9.5" fill="#4000BF" font-weight="700">binlog → Kafka → ES 자동 색인 (이벤트 누락 0건)</text>
+<path d="M432 440 L716 440" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+<path d="M716 466 L432 466" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
 
 <defs>
-  <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-    <path d="M0 1 L9 5 L0 9 Z" fill="#000"/>
+  <marker id="ar" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto">
+    <path d="M0 0.5 L5.5 3 L0 5.5 Z" fill="#1a1a1a"/>
   </marker>
-  <marker id="pu" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-    <path d="M0 1 L9 5 L0 9 Z" fill="#4000BF"/>
+  <marker id="pu" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto">
+    <path d="M0 0.5 L5.5 3 L0 5.5 Z" fill="#4000BF"/>
   </marker>
 </defs>
 </svg>
