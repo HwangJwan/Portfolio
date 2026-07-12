@@ -1,165 +1,285 @@
-<svg viewBox="0 0 920 600" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, BlinkMacSystemFont, sans-serif">
-  <rect width="920" height="600" fill="#FCFDFC"/>
+<svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
+<rect width="960" height="640" fill="#fff"/>
 
-  <!-- ===== BAND 1: Client ===== -->
-  <rect x="0" y="0" width="920" height="72" fill="#F4F6F5"/>
-  <rect x="378" y="18" width="164" height="38" rx="8" fill="#2C3E50"/>
-  <g transform="translate(396,29)">
-    <path d="M0 0 L8 0 L10 4 L12 0 L20 0 L10 17 Z" fill="#4FC08D"/>
+<!-- ===== 상단: 사용자 유입 / 배포 파이프라인 ===== -->
+<g transform="translate(60,30)">
+  <circle cx="16" cy="16" r="14" fill="none" stroke="#F5A623" stroke-width="2.5"/>
+  <circle cx="16" cy="11" r="4" fill="#F5A623"/>
+  <path d="M8 26 C8 20 24 20 24 26" fill="#F5A623"/>
+  <text x="16" y="48" font-size="10" fill="#555" text-anchor="middle" font-weight="600">사용자</text>
+</g>
+<path d="M100 46 L128 46" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<g transform="translate(136,28)">
+  <rect x="0" y="0" width="36" height="36" rx="8" fill="#8C4FFF"/>
+  <circle cx="18" cy="18" r="11" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M7 18 L29 18 M18 7 C22 12 22 24 18 29 C14 24 14 12 18 7" stroke="#fff" stroke-width="1.6" fill="none"/>
+  <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">Route 53</text>
+  <text x="18" y="-6" font-size="8.5" fill="#999" text-anchor="middle">peoplecore.cloud</text>
+</g>
+<path d="M180 46 L208 46" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<g transform="translate(216,28)">
+  <rect x="0" y="0" width="36" height="36" rx="8" fill="#E8792B"/>
+  <rect x="9" y="8" width="18" height="5" rx="1.5" fill="#fff"/>
+  <rect x="6" y="17" width="8" height="5" rx="1.5" fill="#fff"/>
+  <rect x="22" y="17" width="8" height="5" rx="1.5" fill="#fff"/>
+  <rect x="6" y="26" width="8" height="4" rx="1.5" fill="#fff"/>
+  <rect x="22" y="26" width="8" height="4" rx="1.5" fill="#fff"/>
+  <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">ALB</text>
+</g>
+
+<!-- 배포 파이프라인 (우측) -->
+<g transform="translate(690,28)">
+  <circle cx="18" cy="18" r="17" fill="#181717"/>
+  <path d="M18 6 C11 6 6 11 6 18 C6 23.5 9.5 28 14.5 29.5 C15.2 29.6 15.4 29.2 15.4 28.8 L15.4 26.6 C12 27.4 11.3 25 11.3 25 C10.7 23.6 9.9 23.2 9.9 23.2 C8.8 22.5 10 22.5 10 22.5 C11.2 22.6 11.8 23.7 11.8 23.7 C12.9 25.5 14.6 25 15.4 24.7 C15.5 23.9 15.8 23.4 16.2 23.1 C13.5 22.8 10.6 21.7 10.6 17.1 C10.6 15.8 11.1 14.7 11.8 13.9 C11.7 13.6 11.3 12.3 11.9 10.6 C11.9 10.6 13 10.2 15.4 11.9 C16.4 11.6 17.4 11.5 18.5 11.5 C19.5 11.5 20.6 11.6 21.6 11.9 C24 10.2 25 10.6 25 10.6 C25.6 12.3 25.2 13.6 25.1 13.9 C25.9 14.7 26.3 15.8 26.3 17.1 C26.3 21.7 23.5 22.8 20.8 23.1 C21.3 23.5 21.7 24.3 21.7 25.5 L21.7 28.8 C21.7 29.2 21.9 29.6 22.6 29.5 C27.5 28 31 23.5 31 18 C31 11 25.5 6 18 6 Z" fill="#fff"/>
+  <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">GitHub Actions</text>
+</g>
+<path d="M680 46 L652 46" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<g transform="translate(604,28)">
+  <rect x="0" y="0" width="36" height="36" rx="8" fill="#F58536"/>
+  <path d="M18 8 L28 13 L28 24 L18 29 L8 24 L8 13 Z" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M8 13 L18 18 L28 13 M18 18 L18 29" stroke="#fff" stroke-width="1.6" fill="none"/>
+  <text x="18" y="52" font-size="10" fill="#555" text-anchor="middle" font-weight="600">ECR</text>
+</g>
+<path d="M622 70 L622 96" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<path d="M234 70 L234 96 L440 96 L440 118" stroke="#000" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+
+<!-- ===== EKS 경계 ===== -->
+<rect x="40" y="150" width="600" height="450" rx="10" fill="none" stroke="#326CE5" stroke-width="2.5"/>
+<g transform="translate(50,124)">
+  <path d="M14 0 L27 7 L24 22 L14 28 L4 22 L1 7 Z" fill="#FF9900"/>
+  <path d="M14 7 L20 10 L18 19 L14 21 L10 19 L8 10 Z" fill="#fff"/>
+</g>
+<text x="84" y="145" font-size="11" fill="#FF9900" font-weight="700">Amazon EKS</text>
+
+<!-- Ingress -->
+<g transform="translate(420,118)">
+  <path d="M20 0 L37 9 L33 30 L20 38 L7 30 L3 9 Z" fill="#326CE5"/>
+  <path d="M20 9 L28 13 L26 24 L20 28 L14 24 L12 13 Z" fill="none" stroke="#fff" stroke-width="1.8"/>
+  <circle cx="20" cy="19" r="2.5" fill="#fff"/>
+  <text x="20" y="52" font-size="10" fill="#326CE5" text-anchor="middle" font-weight="700">Ingress</text>
+</g>
+<path d="M440 172 L440 196" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<!-- Spring Cloud Gateway -->
+<g transform="translate(360,196)">
+  <rect x="0" y="0" width="160" height="46" rx="8" fill="#fff" stroke="#6DB33F" stroke-width="2.5"/>
+  <g transform="translate(12,11)">
+    <path d="M12 0 C4 6 0 12 0 17 C0 22 5 25 12 25 C19 25 24 22 24 17 C24 11 19 6 12 0 Z" fill="#6DB33F"/>
+    <circle cx="12" cy="18" r="3.5" fill="#fff"/>
   </g>
-  <text x="470" y="42" font-size="14" fill="#fff" font-weight="600">Client · Vue 3</text>
+  <text x="46" y="21" font-size="12.5" fill="#145A1B" font-weight="700">Spring Cloud</text>
+  <text x="46" y="36" font-size="12.5" fill="#145A1B" font-weight="700">Gateway</text>
+</g>
 
-  <!-- ===== BAND 2: Gateway ===== -->
-  <path d="M460 56 L460 92" stroke="#B0BEC5" stroke-width="2.5" marker-end="url(#gray)"/>
-  <rect x="330" y="92" width="260" height="46" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2.5"/>
-  <g transform="translate(352,104)">
-    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
-    <circle cx="11" cy="16" r="3.5" fill="#fff"/>
+<!-- 분기 화살표 -->
+<path d="M400 242 L300 268" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M440 242 L440 268" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M480 242 L580 268" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M380 242 L180 300" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M500 242 L560 400" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M420 242 L240 430" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<!-- ===== Pod 카드들 ===== -->
+<!-- hr-service -->
+<g transform="translate(70,270)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
+  <g transform="translate(12,50)">
+    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
   </g>
-  <text x="392" y="122" font-size="15" fill="#145A1B" font-weight="700">API Gateway</text>
-  <text x="392" y="134" font-size="10" fill="#7A9A8A">Spring Cloud</text>
-
-  <!-- ===== BAND 3: MSA Services (EKS) ===== -->
-  <rect x="26" y="166" width="868" height="118" rx="12" fill="#F0F9F5" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="7 5"/>
-  <g transform="translate(44,182)">
-    <path d="M9 0 L18 5 L16 15 L9 19 L2 15 L0 5 Z" fill="none" stroke="#1D9E75" stroke-width="1.8"/>
-    <path d="M9 5 L13 7.5 L12 13 L9 15 L6 13 L5 7.5 Z" fill="#1D9E75"/>
+  <g transform="translate(52,48)">
+    <path d="M13 0 C4 6 0 13 0 19 C0 24 5 28 13 28 C21 28 26 24 26 19 C26 12 21 6 13 0 Z" fill="#6DB33F"/>
+    <circle cx="13" cy="20" r="4" fill="#fff"/>
   </g>
-  <text x="70" y="197" font-size="12" fill="#1D9E75" font-weight="700" letter-spacing="0.5">AWS EKS · 서비스별 독립 배포</text>
+  <text x="90" y="68" font-size="10.5" fill="#333" font-weight="700">hr-service</text>
+</g>
 
-  <path d="M460 138 L165 214" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
-  <path d="M460 138 L460 214" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
-  <path d="M460 138 L755 214" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
-
-  <rect x="60" y="214" width="210" height="54" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
-  <g transform="translate(76,228)">
-    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+<!-- search-service -->
+<g transform="translate(70,392)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
+  <g transform="translate(12,50)">
+    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
   </g>
-  <text x="108" y="237" font-size="13.5" fill="#145A1B" font-weight="700">hr-service</text>
-  <text x="108" y="253" font-size="10" fill="#7A9A8A">인사 · 근태 · 급여 · 결재</text>
-
-  <rect x="355" y="214" width="210" height="54" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
-  <g transform="translate(371,228)">
-    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  <g transform="translate(54,52)">
+    <rect x="0" y="0" width="22" height="4" rx="2" fill="#00A9E0"/>
+    <rect x="0" y="6" width="22" height="4" rx="2" fill="#FEC514"/>
+    <rect x="0" y="12" width="14" height="4" rx="2" fill="#00BFB3"/>
+    <rect x="0" y="18" width="22" height="4" rx="2" fill="#005571"/>
   </g>
-  <text x="403" y="237" font-size="13.5" fill="#145A1B" font-weight="700">search-service</text>
-  <text x="403" y="253" font-size="10" fill="#7A9A8A">통합검색 · AI Copilot</text>
+  <text x="90" y="68" font-size="10.5" fill="#333" font-weight="700">search</text>
+</g>
 
-  <rect x="650" y="214" width="210" height="54" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
-  <g transform="translate(666,228)">
-    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+<!-- collaboration -->
+<g transform="translate(70,514)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
+  <g transform="translate(12,50)">
+    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
   </g>
-  <text x="698" y="237" font-size="13.5" fill="#145A1B" font-weight="700">collaboration</text>
-  <text x="698" y="253" font-size="10" fill="#7A9A8A">파일함 · 조직도</text>
-
-  <!-- ===== BAND 4: CDC 파이프라인 ===== -->
-  <rect x="26" y="312" width="600" height="104" rx="12" fill="#F7F4FE" stroke="#4000BF" stroke-width="1.5"/>
-  <text x="46" y="334" font-size="11.5" fill="#4000BF" font-weight="700" letter-spacing="0.5">CDC 색인 파이프라인 — 애플리케이션 이벤트 발행 코드 0</text>
-
-  <path d="M165 268 L165 348" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
-
-  <!-- MySQL -->
-  <rect x="48" y="348" width="118" height="52" rx="7" fill="#fff" stroke="#4479A1" stroke-width="2"/>
-  <g transform="translate(62,360)">
-    <ellipse cx="10" cy="4" rx="10" ry="4" fill="#4479A1"/>
-    <path d="M0 4 L0 20 C0 22.5 4.5 24 10 24 C15.5 24 20 22.5 20 20 L20 4" fill="none" stroke="#4479A1" stroke-width="2"/>
-    <path d="M0 12 C0 14.5 4.5 16 10 16 C15.5 16 20 14.5 20 12" fill="none" stroke="#4479A1" stroke-width="1.5"/>
+  <g transform="translate(52,48)">
+    <path d="M13 0 C4 6 0 13 0 19 C0 24 5 28 13 28 C21 28 26 24 26 19 C26 12 21 6 13 0 Z" fill="#6DB33F"/>
+    <circle cx="13" cy="20" r="4" fill="#fff"/>
   </g>
-  <text x="92" y="381" font-size="12.5" fill="#2C5372" font-weight="700">MySQL</text>
+  <text x="90" y="68" font-size="10.5" fill="#333" font-weight="700">collab</text>
+</g>
 
-  <path d="M166 374 L196 374" stroke="#4000BF" stroke-width="2.5" marker-end="url(#purple)"/>
-  <text x="181" y="366" font-size="9" fill="#4000BF" text-anchor="middle" font-weight="700">binlog</text>
-
-  <!-- Debezium -->
-  <rect x="200" y="348" width="118" height="52" rx="7" fill="#fff" stroke="#4000BF" stroke-width="2"/>
-  <g transform="translate(214,360)">
-    <circle cx="10" cy="12" r="10" fill="none" stroke="#4000BF" stroke-width="2"/>
-    <circle cx="10" cy="12" r="3.5" fill="#4000BF"/>
-    <path d="M10 2 L10 6 M10 18 L10 22 M0 12 L4 12 M16 12 L20 12" stroke="#4000BF" stroke-width="2"/>
+<!-- Redis -->
+<g transform="translate(255,300)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="140" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
+  <g transform="translate(12,50)">
+    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
   </g>
-  <text x="244" y="381" font-size="12.5" fill="#4000BF" font-weight="700">Debezium</text>
-
-  <path d="M318 374 L348 374" stroke="#4000BF" stroke-width="2.5" marker-end="url(#purple)"/>
-
-  <!-- Kafka -->
-  <rect x="352" y="348" width="118" height="52" rx="7" fill="#fff" stroke="#231F20" stroke-width="2"/>
-  <g transform="translate(366,358)">
-    <circle cx="4" cy="5" r="3.5" fill="#231F20"/>
-    <circle cx="4" cy="21" r="3.5" fill="#231F20"/>
-    <circle cx="17" cy="13" r="4.5" fill="#231F20"/>
-    <path d="M6 7 L14 11 M6 19 L14 15" stroke="#231F20" stroke-width="1.8"/>
+  <g transform="translate(54,52)">
+    <path d="M13 0 L26 6 L13 12 L0 6 Z" fill="#FF4438"/>
+    <path d="M0 12 L13 18 L26 12" fill="none" stroke="#FF4438" stroke-width="2.5"/>
+    <path d="M0 17 L13 23 L26 17" fill="none" stroke="#FF4438" stroke-width="2.5"/>
   </g>
-  <text x="396" y="381" font-size="12.5" fill="#231F20" font-weight="700">Kafka</text>
+  <text x="95" y="68" font-size="10.5" fill="#333" font-weight="700">Redis</text>
+</g>
 
-  <path d="M470 374 L500 374" stroke="#4000BF" stroke-width="2.5" marker-end="url(#purple)"/>
-
-  <!-- Elasticsearch -->
-  <rect x="504" y="348" width="106" height="52" rx="7" fill="#fff" stroke="#005571" stroke-width="2"/>
-  <g transform="translate(516,360)">
-    <rect x="0" y="0" width="18" height="4" rx="2" fill="#005571"/>
-    <rect x="0" y="7" width="18" height="4" rx="2" fill="#00A9E0"/>
-    <rect x="0" y="14" width="12" height="4" rx="2" fill="#FEC514"/>
-    <rect x="0" y="21" width="18" height="4" rx="2" fill="#00BFB3"/>
+<!-- Kafka -->
+<g transform="translate(255,430)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="140" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
+  <g transform="translate(12,50)">
+    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
   </g>
-  <text x="542" y="370" font-size="11.5" fill="#005571" font-weight="700">Elasticsearch</text>
-  <text x="542" y="392" font-size="9" fill="#4A7C8C">BM25 + kNN + RRF</text>
-
-  <!-- ===== BAND 5: LLM 라우팅 ===== -->
-  <rect x="26" y="444" width="600" height="86" rx="12" fill="#FFF9F6" stroke="#D97757" stroke-width="1.5"/>
-  <g transform="translate(46,458)">
-    <path d="M8 0 L16 18 L12 18 L10.5 14 L5.5 14 L4 18 L0 18 Z" fill="#D97757"/>
+  <g transform="translate(54,50)">
+    <circle cx="5" cy="5" r="4" fill="#231F20"/>
+    <circle cx="5" cy="22" r="4" fill="#231F20"/>
+    <circle cx="20" cy="13" r="5" fill="#231F20"/>
+    <path d="M8 7 L16 11 M8 20 L16 16" stroke="#231F20" stroke-width="2"/>
   </g>
-  <text x="70" y="472" font-size="11.5" fill="#B85C3E" font-weight="700">LLM 이중 라우팅 · FastAPI</text>
+  <text x="95" y="68" font-size="10.5" fill="#333" font-weight="700">Kafka</text>
+</g>
 
-  <path d="M460 268 L460 300 L326 300 L326 490" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#orange)"/>
-
-  <rect x="52" y="486" width="250" height="34" rx="6" fill="#FCEEF0" stroke="#A50034" stroke-width="1.8"/>
-  <g transform="translate(66,494)">
-    <rect x="0" y="0" width="17" height="17" rx="4" fill="#A50034"/>
-    <circle cx="8.5" cy="8.5" r="4" fill="#fff"/>
+<!-- Debezium -->
+<g transform="translate(255,548)">
+  <rect x="0" y="0" width="140" height="44" rx="7" fill="#fff" stroke="#4000BF" stroke-width="2"/>
+  <g transform="translate(12,10)">
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#4000BF" stroke-width="2.5"/>
+    <circle cx="12" cy="12" r="4" fill="#4000BF"/>
+    <path d="M12 1 L12 5 M12 19 L12 23 M1 12 L5 12 M19 12 L23 12" stroke="#4000BF" stroke-width="2.5"/>
   </g>
-  <text x="94" y="508" font-size="11.5" fill="#A50034" font-weight="700">민감 → EXAONE 3.5 (온프레미스)</text>
+  <text x="48" y="27" font-size="11" fill="#4000BF" font-weight="700">Debezium</text>
+</g>
 
-  <rect x="350" y="486" width="250" height="34" rx="6" fill="#FDF1EC" stroke="#D97757" stroke-width="1.8"/>
-  <g transform="translate(364,493)">
-    <path d="M9 0 L18 19 L13.5 19 L12 15.5 L6 15.5 L4.5 19 L0 19 Z" fill="#D97757"/>
+<!-- FastAPI (AI) -->
+<g transform="translate(430,400)">
+  <path d="M22 0 L38 8 L35 26 L22 34 L9 26 L6 8 Z" fill="#326CE5"/>
+  <text x="22" y="21" font-size="7" fill="#fff" text-anchor="middle" font-weight="700">SVC</text>
+  <rect x="0" y="38" width="150" height="48" rx="7" fill="#fff" stroke="#00C7D4" stroke-width="2"/>
+  <text x="8" y="34" font-size="9" fill="#666" font-weight="600">pod</text>
+  <g transform="translate(12,50)">
+    <path d="M2 14 L2 8 L26 8 L26 14 C26 19 20 22 14 22 C8 22 2 19 2 14 Z" fill="#2496ED"/>
+    <rect x="5" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="12" y="2" width="5" height="5" fill="#2496ED"/>
+    <rect x="19" y="2" width="5" height="5" fill="#2496ED"/>
   </g>
-  <text x="392" y="508" font-size="11.5" fill="#B85C3E" font-weight="700">일반 → Claude Haiku</text>
-
-  <!-- ===== 저장소 (우측) ===== -->
-  <rect x="650" y="312" width="244" height="218" rx="12" fill="#FAFBFC" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="670" y="334" font-size="11.5" fill="#64748B" font-weight="700" letter-spacing="0.5">STORAGE</text>
-
-  <rect x="670" y="350" width="204" height="52" rx="7" fill="#fff" stroke="#FFB000" stroke-width="2"/>
-  <g transform="translate(686,363)">
-    <path d="M0 13 L6 3 L12 13 Z" fill="#FFB000"/>
-    <path d="M8 13 L14 3 L20 13 Z" fill="#FFD25F"/>
-    <rect x="0" y="16" width="20" height="4" rx="2" fill="#FFB000"/>
+  <g transform="translate(54,50)">
+    <circle cx="12" cy="12" r="12" fill="#009688"/>
+    <path d="M13 3 L6 14 L11 14 L10 21 L18 10 L13 10 Z" fill="#fff"/>
   </g>
-  <text x="718" y="373" font-size="12.5" fill="#8A6000" font-weight="700">ChromaDB</text>
-  <text x="718" y="390" font-size="9.5" fill="#B08A3E">벡터 임베딩 저장</text>
+  <text x="92" y="68" font-size="10.5" fill="#333" font-weight="700">FastAPI</text>
+</g>
 
-  <rect x="670" y="414" width="204" height="52" rx="7" fill="#fff" stroke="#C72E49" stroke-width="2"/>
-  <g transform="translate(686,427)">
-    <path d="M2 18 L6 2 L10 12 L14 2 L18 18" fill="none" stroke="#C72E49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- Elasticsearch (독립) -->
+<g transform="translate(430,510)">
+  <rect x="0" y="0" width="150" height="52" rx="7" fill="#fff" stroke="#005571" stroke-width="2"/>
+  <g transform="translate(14,14)">
+    <rect x="0" y="0" width="22" height="4.5" rx="2" fill="#00A9E0"/>
+    <rect x="0" y="6.5" width="22" height="4.5" rx="2" fill="#FEC514"/>
+    <rect x="0" y="13" width="14" height="4.5" rx="2" fill="#00BFB3"/>
+    <rect x="0" y="19.5" width="22" height="4.5" rx="2" fill="#005571"/>
   </g>
-  <text x="718" y="437" font-size="12.5" fill="#C72E49" font-weight="700">MinIO</text>
-  <text x="718" y="454" font-size="9.5" fill="#D4707F">Presigned URL 직접 업로드</text>
+  <text x="48" y="24" font-size="11" fill="#005571" font-weight="700">Elasticsearch</text>
+  <text x="48" y="39" font-size="8.5" fill="#4A7C8C">BM25 + kNN + RRF</text>
+</g>
 
-  <text x="772" y="500" font-size="10" fill="#94A3B8" text-anchor="middle">company_id 기반 멀티테넌시</text>
+<!-- ===== 우측: 외부 서비스 ===== -->
+<!-- RDS -->
+<rect x="690" y="170" width="230" height="130" rx="10" fill="none" stroke="#2E73B8" stroke-width="2"/>
+<g transform="translate(760,196)">
+  <path d="M45 0 L90 26 L90 78 L45 104 L0 78 L0 26 Z" fill="#2E73B8" transform="scale(0.62)"/>
+  <path d="M45 0 L90 26 L45 52 L0 26 Z" fill="#5294CF" transform="scale(0.62)"/>
+</g>
+<text x="805" y="285" font-size="12" fill="#2E73B8" text-anchor="middle" font-weight="700">Amazon RDS</text>
+<text x="805" y="299" font-size="9" fill="#7BA7CC" text-anchor="middle">MySQL 8</text>
 
-  <!-- 하단 캡션 -->
-  <text x="460" y="566" font-size="12" fill="#64748B" text-anchor="middle" font-weight="600">이벤트 기반 통신 · 온프레미스 sLLM으로 민감정보 격리 · CDC로 DB–ES 정합성 유지</text>
+<path d="M650 220 L684 220" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M684 250 L650 250" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
 
-  <defs>
-    <marker id="gray" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#B0BEC5" stroke-width="1.8"/>
-    </marker>
-    <marker id="purple" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#4000BF" stroke-width="2"/>
-    </marker>
-    <marker id="orange" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#D97757" stroke-width="2"/>
-    </marker>
-  </defs>
+<!-- AI 라우팅 -->
+<rect x="690" y="340" width="230" height="230" rx="10" fill="none" stroke="#D97757" stroke-width="2"/>
+<text x="805" y="366" font-size="11" fill="#B85C3E" text-anchor="middle" font-weight="700">LLM 이중 라우팅</text>
+
+<g transform="translate(712,382)">
+  <rect x="0" y="0" width="186" height="76" rx="8" fill="#FDF1EC" stroke="#D97757" stroke-width="1.8"/>
+  <g transform="translate(14,16)">
+    <path d="M22 0 L22 44 M0 22 L44 22 M6 6 L38 38 M38 6 L6 38" stroke="#D97757" stroke-width="3" transform="scale(0.62)"/>
+  </g>
+  <text x="60" y="26" font-size="11.5" fill="#B85C3E" font-weight="700">Claude Haiku</text>
+  <text x="60" y="43" font-size="9" fill="#C99080">일반 발화</text>
+  <text x="60" y="60" font-size="9" fill="#C99080">Prompt Caching · 83%↓</text>
+</g>
+
+<g transform="translate(712,474)">
+  <rect x="0" y="0" width="186" height="76" rx="8" fill="#FCEEF0" stroke="#A50034" stroke-width="1.8"/>
+  <g transform="translate(14,20)">
+    <rect x="0" y="0" width="28" height="28" rx="7" fill="#A50034"/>
+    <circle cx="14" cy="14" r="7" fill="#fff"/>
+    <circle cx="14" cy="14" r="3" fill="#A50034"/>
+  </g>
+  <text x="54" y="26" font-size="11.5" fill="#A50034" font-weight="700">EXAONE 3.5</text>
+  <text x="54" y="43" font-size="9" fill="#C4707F">민감 발화 · 온프레미스</text>
+  <text x="54" y="60" font-size="9" fill="#C4707F">PIPA 준수</text>
+</g>
+
+<path d="M590 424 L684 424" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+<path d="M684 460 L590 460" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+
+<!-- CDC 흐름 강조 -->
+<path d="M180 592 L250 570" stroke="#4000BF" stroke-width="2.5" stroke-dasharray="6 4" fill="none"/>
+<path d="M395 570 L430 555" stroke="#4000BF" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#pu)"/>
+<text x="300" y="614" font-size="9.5" fill="#4000BF" font-weight="700">binlog → Kafka → ES 자동 색인 (이벤트 누락 0건)</text>
+
+<defs>
+  <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <path d="M0 1 L9 5 L0 9 Z" fill="#000"/>
+  </marker>
+  <marker id="pu" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <path d="M0 1 L9 5 L0 9 Z" fill="#4000BF"/>
+  </marker>
+</defs>
 </svg>
