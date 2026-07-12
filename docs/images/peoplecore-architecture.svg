@@ -1,82 +1,165 @@
-<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, sans-serif">
-  <rect width="900" height="560" fill="#FBFDFC"/>
+<svg viewBox="0 0 920 600" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, BlinkMacSystemFont, sans-serif">
+  <rect width="920" height="600" fill="#FCFDFC"/>
 
-  <!-- EKS 경계 -->
-  <rect x="30" y="70" width="840" height="400" rx="10" fill="none" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
-  <text x="46" y="92" font-size="11" fill="#1D9E75" font-weight="600" letter-spacing="1">AWS EKS</text>
+  <!-- ===== BAND 1: Client ===== -->
+  <rect x="0" y="0" width="920" height="72" fill="#F4F6F5"/>
+  <rect x="378" y="18" width="164" height="38" rx="8" fill="#2C3E50"/>
+  <g transform="translate(396,29)">
+    <path d="M0 0 L8 0 L10 4 L12 0 L20 0 L10 17 Z" fill="#4FC08D"/>
+  </g>
+  <text x="470" y="42" font-size="14" fill="#fff" font-weight="600">Client · Vue 3</text>
 
-  <!-- Client -->
-  <rect x="380" y="20" width="140" height="34" rx="6" fill="#2C3E50"/>
-  <text x="450" y="42" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">Client (Vue 3)</text>
-  <path d="M450 54 L450 106" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- ===== BAND 2: Gateway ===== -->
+  <path d="M460 56 L460 92" stroke="#B0BEC5" stroke-width="2.5" marker-end="url(#gray)"/>
+  <rect x="330" y="92" width="260" height="46" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2.5"/>
+  <g transform="translate(352,104)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+    <circle cx="11" cy="16" r="3.5" fill="#fff"/>
+  </g>
+  <text x="392" y="122" font-size="15" fill="#145A1B" font-weight="700">API Gateway</text>
+  <text x="392" y="134" font-size="10" fill="#7A9A8A">Spring Cloud</text>
 
-  <!-- Gateway -->
-  <rect x="350" y="106" width="200" height="38" rx="6" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
-  <text x="450" y="130" font-size="13" fill="#145A1B" text-anchor="middle" font-weight="600">API Gateway</text>
+  <!-- ===== BAND 3: MSA Services (EKS) ===== -->
+  <rect x="26" y="166" width="868" height="118" rx="12" fill="#F0F9F5" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <g transform="translate(44,182)">
+    <path d="M9 0 L18 5 L16 15 L9 19 L2 15 L0 5 Z" fill="none" stroke="#1D9E75" stroke-width="1.8"/>
+    <path d="M9 5 L13 7.5 L12 13 L9 15 L6 13 L5 7.5 Z" fill="#1D9E75"/>
+  </g>
+  <text x="70" y="197" font-size="12" fill="#1D9E75" font-weight="700" letter-spacing="0.5">AWS EKS · 서비스별 독립 배포</text>
 
-  <!-- MSA Services -->
-  <path d="M450 144 L170 190" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
-  <path d="M450 144 L450 190" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
-  <path d="M450 144 L730 190" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M460 138 L165 214" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
+  <path d="M460 138 L460 214" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
+  <path d="M460 138 L755 214" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
 
-  <rect x="80" y="196" width="180" height="52" rx="6" fill="#E8F5EF" stroke="#1D9E75" stroke-width="1.5"/>
-  <text x="170" y="217" font-size="12.5" fill="#145A1B" text-anchor="middle" font-weight="700">hr-service</text>
-  <text x="170" y="236" font-size="10.5" fill="#5A7A6B" text-anchor="middle">인사 · 근태 · 급여 · 결재</text>
+  <rect x="60" y="214" width="210" height="54" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
+  <g transform="translate(76,228)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  </g>
+  <text x="108" y="237" font-size="13.5" fill="#145A1B" font-weight="700">hr-service</text>
+  <text x="108" y="253" font-size="10" fill="#7A9A8A">인사 · 근태 · 급여 · 결재</text>
 
-  <rect x="360" y="196" width="180" height="52" rx="6" fill="#E8F5EF" stroke="#1D9E75" stroke-width="1.5"/>
-  <text x="450" y="217" font-size="12.5" fill="#145A1B" text-anchor="middle" font-weight="700">search-service</text>
-  <text x="450" y="236" font-size="10.5" fill="#5A7A6B" text-anchor="middle">통합검색 · AI Copilot</text>
+  <rect x="355" y="214" width="210" height="54" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
+  <g transform="translate(371,228)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  </g>
+  <text x="403" y="237" font-size="13.5" fill="#145A1B" font-weight="700">search-service</text>
+  <text x="403" y="253" font-size="10" fill="#7A9A8A">통합검색 · AI Copilot</text>
 
-  <rect x="640" y="196" width="180" height="52" rx="6" fill="#E8F5EF" stroke="#1D9E75" stroke-width="1.5"/>
-  <text x="730" y="217" font-size="12.5" fill="#145A1B" text-anchor="middle" font-weight="700">collaboration-service</text>
-  <text x="730" y="236" font-size="10.5" fill="#5A7A6B" text-anchor="middle">파일함 · 조직도</text>
+  <rect x="650" y="214" width="210" height="54" rx="8" fill="#fff" stroke="#1D9E75" stroke-width="2"/>
+  <g transform="translate(666,228)">
+    <path d="M11 0 C4 5 0 10 0 15 C0 20 5 23 11 23 C17 23 22 20 22 15 C22 10 18 5 11 0 Z" fill="#6DB33F"/>
+  </g>
+  <text x="698" y="237" font-size="13.5" fill="#145A1B" font-weight="700">collaboration</text>
+  <text x="698" y="253" font-size="10" fill="#7A9A8A">파일함 · 조직도</text>
 
-  <!-- CDC 파이프라인 -->
-  <path d="M170 248 L170 296" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#a)"/>
-  <rect x="80" y="302" width="180" height="40" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="170" y="327" font-size="12" fill="#334155" text-anchor="middle" font-weight="600">MySQL 8</text>
+  <!-- ===== BAND 4: CDC 파이프라인 ===== -->
+  <rect x="26" y="312" width="600" height="104" rx="12" fill="#F7F4FE" stroke="#4000BF" stroke-width="1.5"/>
+  <text x="46" y="334" font-size="11.5" fill="#4000BF" font-weight="700" letter-spacing="0.5">CDC 색인 파이프라인 — 애플리케이션 이벤트 발행 코드 0</text>
 
-  <path d="M260 322 L318 322" stroke="#4000BF" stroke-width="2" marker-end="url(#b)"/>
-  <text x="289" y="314" font-size="9.5" fill="#4000BF" text-anchor="middle" font-weight="600">binlog</text>
+  <path d="M165 268 L165 348" stroke="#B0BEC5" stroke-width="2" marker-end="url(#gray)"/>
 
-  <rect x="324" y="302" width="120" height="40" rx="6" fill="#F3EEFC" stroke="#4000BF" stroke-width="1.5"/>
-  <text x="384" y="327" font-size="11.5" fill="#4000BF" text-anchor="middle" font-weight="700">Debezium</text>
+  <!-- MySQL -->
+  <rect x="48" y="348" width="118" height="52" rx="7" fill="#fff" stroke="#4479A1" stroke-width="2"/>
+  <g transform="translate(62,360)">
+    <ellipse cx="10" cy="4" rx="10" ry="4" fill="#4479A1"/>
+    <path d="M0 4 L0 20 C0 22.5 4.5 24 10 24 C15.5 24 20 22.5 20 20 L20 4" fill="none" stroke="#4479A1" stroke-width="2"/>
+    <path d="M0 12 C0 14.5 4.5 16 10 16 C15.5 16 20 14.5 20 12" fill="none" stroke="#4479A1" stroke-width="1.5"/>
+  </g>
+  <text x="92" y="381" font-size="12.5" fill="#2C5372" font-weight="700">MySQL</text>
 
-  <path d="M444 322 L502 322" stroke="#4000BF" stroke-width="2" marker-end="url(#b)"/>
+  <path d="M166 374 L196 374" stroke="#4000BF" stroke-width="2.5" marker-end="url(#purple)"/>
+  <text x="181" y="366" font-size="9" fill="#4000BF" text-anchor="middle" font-weight="700">binlog</text>
 
-  <rect x="508" y="302" width="110" height="40" rx="6" fill="#F1F5F9" stroke="#231F20" stroke-width="1.5"/>
-  <text x="563" y="327" font-size="11.5" fill="#231F20" text-anchor="middle" font-weight="700">Kafka</text>
+  <!-- Debezium -->
+  <rect x="200" y="348" width="118" height="52" rx="7" fill="#fff" stroke="#4000BF" stroke-width="2"/>
+  <g transform="translate(214,360)">
+    <circle cx="10" cy="12" r="10" fill="none" stroke="#4000BF" stroke-width="2"/>
+    <circle cx="10" cy="12" r="3.5" fill="#4000BF"/>
+    <path d="M10 2 L10 6 M10 18 L10 22 M0 12 L4 12 M16 12 L20 12" stroke="#4000BF" stroke-width="2"/>
+  </g>
+  <text x="244" y="381" font-size="12.5" fill="#4000BF" font-weight="700">Debezium</text>
 
-  <path d="M618 322 L676 322" stroke="#4000BF" stroke-width="2" marker-end="url(#b)"/>
+  <path d="M318 374 L348 374" stroke="#4000BF" stroke-width="2.5" marker-end="url(#purple)"/>
 
-  <rect x="682" y="302" width="138" height="40" rx="6" fill="#E6F1F5" stroke="#005571" stroke-width="1.5"/>
-  <text x="751" y="321" font-size="11.5" fill="#005571" text-anchor="middle" font-weight="700">Elasticsearch</text>
-  <text x="751" y="335" font-size="9" fill="#4A7C8C" text-anchor="middle">BM25 + kNN + RRF</text>
+  <!-- Kafka -->
+  <rect x="352" y="348" width="118" height="52" rx="7" fill="#fff" stroke="#231F20" stroke-width="2"/>
+  <g transform="translate(366,358)">
+    <circle cx="4" cy="5" r="3.5" fill="#231F20"/>
+    <circle cx="4" cy="21" r="3.5" fill="#231F20"/>
+    <circle cx="17" cy="13" r="4.5" fill="#231F20"/>
+    <path d="M6 7 L14 11 M6 19 L14 15" stroke="#231F20" stroke-width="1.8"/>
+  </g>
+  <text x="396" y="381" font-size="12.5" fill="#231F20" font-weight="700">Kafka</text>
 
-  <text x="450" y="362" font-size="10" fill="#4000BF" text-anchor="middle" font-weight="600">CDC 색인 파이프라인 · 애플리케이션 이벤트 발행 코드 0</text>
+  <path d="M470 374 L500 374" stroke="#4000BF" stroke-width="2.5" marker-end="url(#purple)"/>
 
-  <!-- AI 라우팅 -->
-  <path d="M450 248 L450 396" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
-  <rect x="300" y="396" width="300" height="58" rx="6" fill="#FFF8F5" stroke="#D97757" stroke-width="1.5"/>
-  <text x="450" y="416" font-size="11.5" fill="#B85C3E" text-anchor="middle" font-weight="700">LLM 이중 라우팅 (FastAPI)</text>
-  <line x1="450" y1="424" x2="450" y2="446" stroke="#E8C4B4" stroke-width="1"/>
-  <text x="375" y="440" font-size="10" fill="#A50034" text-anchor="middle" font-weight="600">민감 → EXAONE 3.5</text>
-  <text x="527" y="440" font-size="10" fill="#D97757" text-anchor="middle" font-weight="600">일반 → Claude Haiku</text>
+  <!-- Elasticsearch -->
+  <rect x="504" y="348" width="106" height="52" rx="7" fill="#fff" stroke="#005571" stroke-width="2"/>
+  <g transform="translate(516,360)">
+    <rect x="0" y="0" width="18" height="4" rx="2" fill="#005571"/>
+    <rect x="0" y="7" width="18" height="4" rx="2" fill="#00A9E0"/>
+    <rect x="0" y="14" width="12" height="4" rx="2" fill="#FEC514"/>
+    <rect x="0" y="21" width="18" height="4" rx="2" fill="#00BFB3"/>
+  </g>
+  <text x="542" y="370" font-size="11.5" fill="#005571" font-weight="700">Elasticsearch</text>
+  <text x="542" y="392" font-size="9" fill="#4A7C8C">BM25 + kNN + RRF</text>
 
-  <!-- 저장소 -->
-  <rect x="640" y="396" width="180" height="58" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="1.5"/>
-  <text x="730" y="416" font-size="11" fill="#64748B" text-anchor="middle" font-weight="600">ChromaDB · MinIO</text>
-  <text x="730" y="437" font-size="9.5" fill="#94A3B8" text-anchor="middle">벡터 저장 · 파일 스토리지</text>
+  <!-- ===== BAND 5: LLM 라우팅 ===== -->
+  <rect x="26" y="444" width="600" height="86" rx="12" fill="#FFF9F6" stroke="#D97757" stroke-width="1.5"/>
+  <g transform="translate(46,458)">
+    <path d="M8 0 L16 18 L12 18 L10.5 14 L5.5 14 L4 18 L0 18 Z" fill="#D97757"/>
+  </g>
+  <text x="70" y="472" font-size="11.5" fill="#B85C3E" font-weight="700">LLM 이중 라우팅 · FastAPI</text>
+
+  <path d="M460 268 L460 300 L326 300 L326 490" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#orange)"/>
+
+  <rect x="52" y="486" width="250" height="34" rx="6" fill="#FCEEF0" stroke="#A50034" stroke-width="1.8"/>
+  <g transform="translate(66,494)">
+    <rect x="0" y="0" width="17" height="17" rx="4" fill="#A50034"/>
+    <circle cx="8.5" cy="8.5" r="4" fill="#fff"/>
+  </g>
+  <text x="94" y="508" font-size="11.5" fill="#A50034" font-weight="700">민감 → EXAONE 3.5 (온프레미스)</text>
+
+  <rect x="350" y="486" width="250" height="34" rx="6" fill="#FDF1EC" stroke="#D97757" stroke-width="1.8"/>
+  <g transform="translate(364,493)">
+    <path d="M9 0 L18 19 L13.5 19 L12 15.5 L6 15.5 L4.5 19 L0 19 Z" fill="#D97757"/>
+  </g>
+  <text x="392" y="508" font-size="11.5" fill="#B85C3E" font-weight="700">일반 → Claude Haiku</text>
+
+  <!-- ===== 저장소 (우측) ===== -->
+  <rect x="650" y="312" width="244" height="218" rx="12" fill="#FAFBFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="670" y="334" font-size="11.5" fill="#64748B" font-weight="700" letter-spacing="0.5">STORAGE</text>
+
+  <rect x="670" y="350" width="204" height="52" rx="7" fill="#fff" stroke="#FFB000" stroke-width="2"/>
+  <g transform="translate(686,363)">
+    <path d="M0 13 L6 3 L12 13 Z" fill="#FFB000"/>
+    <path d="M8 13 L14 3 L20 13 Z" fill="#FFD25F"/>
+    <rect x="0" y="16" width="20" height="4" rx="2" fill="#FFB000"/>
+  </g>
+  <text x="718" y="373" font-size="12.5" fill="#8A6000" font-weight="700">ChromaDB</text>
+  <text x="718" y="390" font-size="9.5" fill="#B08A3E">벡터 임베딩 저장</text>
+
+  <rect x="670" y="414" width="204" height="52" rx="7" fill="#fff" stroke="#C72E49" stroke-width="2"/>
+  <g transform="translate(686,427)">
+    <path d="M2 18 L6 2 L10 12 L14 2 L18 18" fill="none" stroke="#C72E49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="718" y="437" font-size="12.5" fill="#C72E49" font-weight="700">MinIO</text>
+  <text x="718" y="454" font-size="9.5" fill="#D4707F">Presigned URL 직접 업로드</text>
+
+  <text x="772" y="500" font-size="10" fill="#94A3B8" text-anchor="middle">company_id 기반 멀티테넌시</text>
 
   <!-- 하단 캡션 -->
-  <text x="450" y="502" font-size="11" fill="#64748B" text-anchor="middle">서비스별 독립 배포 · 이벤트 기반 통신 · 온프레미스 sLLM으로 민감정보 격리</text>
+  <text x="460" y="566" font-size="12" fill="#64748B" text-anchor="middle" font-weight="600">이벤트 기반 통신 · 온프레미스 sLLM으로 민감정보 격리 · CDC로 DB–ES 정합성 유지</text>
 
   <defs>
-    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-      <path d="M0 1 L7 4 L0 7" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+    <marker id="gray" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#B0BEC5" stroke-width="1.8"/>
     </marker>
-    <marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-      <path d="M0 1 L7 4 L0 7" fill="none" stroke="#4000BF" stroke-width="1.5"/>
+    <marker id="purple" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#4000BF" stroke-width="2"/>
+    </marker>
+    <marker id="orange" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 1 L8 4.5 L0 8" fill="none" stroke="#D97757" stroke-width="2"/>
     </marker>
   </defs>
 </svg>
